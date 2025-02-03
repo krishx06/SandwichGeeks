@@ -1,6 +1,8 @@
 body {
     background-image: url('MacBook\ Pro\ 14_\ -\ 2.png');
     font-family: niramit;
+    overflow-x: hidden;
+
 }
 .container {
     height: 4rem; 
@@ -104,9 +106,49 @@ p {
 .signup {
     height: 35px;
     width: 150px;
+    border-top: 7px solid #ff5500;
     background-color: #ff5500;
     border-radius: 50px;
-    padding-top: 5px;
-    margin-top: -3.3vh;
+    padding-top: 1px;
+    margin-top: -4vh;
     margin-left: 32vw;
+}
+
+
+.circle2 {
+    margin-top: -60vh;
+    margin-left: 100vw;
+    background: #ff550035;
+    opacity: 90%;
+    height: 100vh;
+    width: 50vw;
+    border-radius: 50%;
+    border: 0.1px solid rgba(0, 0, 0, 0.066);
+    box-shadow: 10px 6px 2px rgba(191, 191, 191, 0.157);
+    display: block;
+    z-index: 0;
+    position: absolute;
+}
+
+
+/* .circle2 {
+    margin-top: 10vh;
+    margin-right: 10vw;
+    background: #ff550026;
+    height: 110vh;
+    width: 55vw;
+    border-radius: 50%;
+    border: 0.1px solid rgba(0, 0, 0, 0.085);
+    box-shadow: -10px 6px 2px rgba(191, 191, 191, 0.136);
+    display: inline;
+} */
+
+.imgclass {
+    display: inline;
+    height: 60vh;
+    width: 70vw;
+    margin-top: -39vh;
+    margin-left: 80vw;
+    position: absolute;
+    z-index: 10;
 }
