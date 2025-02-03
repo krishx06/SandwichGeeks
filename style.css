@@ -141,19 +141,6 @@ p {
     position: absolute;
 }
 
-
-/* .circle2 {
-    margin-top: 10vh;
-    margin-right: 10vw;
-    background: #ff550026;
-    height: 110vh;
-    width: 55vw;
-    border-radius: 50%;
-    border: 0.1px solid rgba(0, 0, 0, 0.085);
-    box-shadow: -10px 6px 2px rgba(191, 191, 191, 0.136);
-    display: inline;
-} */
-
 .imgclass {
     display: inline;
     height: 60vh;
@@ -166,7 +153,6 @@ p {
 }
 .imgclass:hover {
     transform: scale(1.03);
-    /* transition: 0.5s; */
 }
 
 
@@ -191,7 +177,7 @@ p {
     transition: all 0.3s ease-in-out;
 }
 .side-btn {
-    background-color: white; /* White background for side buttons */
+    background-color: white; 
     color: black;
     padding: 10px 30px; /* Slightly smaller than the center button */
     font-size: 18px;
@@ -210,5 +196,5 @@ p {
 .side-btn:hover {
     background: #ff7023;
     color: black;
-    transform: translateY(-3px) scale(1.05); /* Slight zoom-in */
+    transform: translateY(-3px) scale(1.1); /* Slight zoom-in */
 }
