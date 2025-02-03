@@ -30,6 +30,9 @@ body {
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.249);
     position: fixed;
 }
+ul {
+    padding-top: 8px;
+}
 ul li{
     font-size: 18px;
     display: inline;
@@ -97,4 +100,13 @@ p {
     margin-left: 57vw;
     height: 100px;
     width: 100px;
+}
+.signup {
+    height: 35px;
+    width: 150px;
+    background-color: #ff5500;
+    border-radius: 50px;
+    padding-top: 5px;
+    margin-top: -3.3vh;
+    margin-left: 32vw;
 }
