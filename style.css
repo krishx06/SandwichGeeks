@@ -171,7 +171,7 @@ p {
 
 .button-container {
     position: absolute;
-    bottom: 50px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -211,3 +211,72 @@ p {
     color: black;
     transform: translateY(-3px) scale(1.1); /* Slight zoom-in */
 }
+
+.rule1 {
+    margin-top: 19.5vh;
+    height: 3px;
+    width: 100%;
+    border: none;
+    border-radius: 40%;
+    background-color: rgba(0, 0, 0, 0.436);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.71);
+}
+.rule2 {
+    height: 2px;
+    width: 25%;
+    border: none;
+    background-color: #ff7023;
+    display: inline-block;
+    margin-left: 10%;
+    margin-bottom: 3.5vh;
+    margin-right: 59px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
+}
+
+.rule3 {
+    height: 2px;
+    width: 25%;
+    border: none;
+    background-color: #ff7023;
+    display: inline-block;
+    margin-bottom: 3.5vh;
+    margin-left: 59px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
+}
+
+.abt-heading {
+    display: inline-block;
+    color: black;
+    font-family: "Sedgwick Ave";
+    font-size: 80px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 30vh;
+    text-shadow: 0px 8px 2px rgba(0, 0, 0, 0.304);
+}
+
+.abt-para {
+    padding-top: 9vh;
+    margin-left: 4vw;
+    color: black;
+    font-family: "Niramit";
+    font-size: 20px;
+    font-weight: normal;
+    text-align: left;
+    line-height: 5vh;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.134);
+}
+
+.sideangle-class {
+    height: 60vh;
+    width: 120vh;
+    display: inline-block;
+    margin-left: 55vw;
+    margin-top: -70vh;
+    transition: transform 0.4s ease-in-out;
+}
+
+.sideangle-class:hover {
+    transform: scale(1.08) rotate(2deg); /* Slight zoom and rotation */
+}
+
