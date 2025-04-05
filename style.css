@@ -638,7 +638,7 @@ p {
 }
 
 .feedback-text {
-    font-size: 16px;
+    font-size: 20px;
     color: #333;
     font-weight: 600;
     font-style: italic;
@@ -646,7 +646,7 @@ p {
 }
 
 .user-name {
-    font-size: 13px;
+    font-size: 15px;
     color: #666;
     font-weight: 500;
     margin: 0;
@@ -654,52 +654,65 @@ p {
 }
 
 .offers-container {
-    margin-top: -30vh;
-    margin-left: 7vw;
+    /* margin-top: 30vh;
+    margin-left: 7vw; */
+    margin-top: -45vh;
+    margin-bottom: -40vh;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 .offers-heading {
-    margin-top: 7vh;
     display: inline-block;
-    color: black;
-    font-family: "Sedgwick Ave";
+    color: #ff7023;
+    font-family: "Sedgwick Ave", cursive;
     font-size: 80px;
     font-weight: normal;
     text-align: center;
     line-height: 30vh;
-    text-shadow: 0px 8px 2px rgba(0, 0, 0, 0.304);
+    text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.3);
+    animation: glowPulse 2.5s infinite ease-in-out;
 }
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 0 0 0px #ff7023;
+    }
+    50% {
+        text-shadow: 0 0 12px #ff6919bf;
+    }
+}
+
 
 .rule12 {
     height: 2px;
-    width: 25%;
+    width: 30%;
     border: none;
     background-color: #ff7023;
     display: inline-block;
-    margin-left: 0%;
+    margin-left: -5vw;
+    /* margin-left: 0%;
     margin-bottom: 3.5vh;
-    margin-right: 59px;
+    margin-right: 59px; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
 }
 
 .rule13 {
     height: 2px;
-    width: 25%;
+    width: 30%;
     border: none;
     background-color: #ff7023;
     display: inline-block;
-    margin-bottom: 3.5vh;
-    margin-left: 59px;
+    margin-right: -5vw;
+    /* margin-bottom: 3.5vh; 
+    margin-left: 59px; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
 }
 .offer-section {
     background-color: #000000;
     width: 70%;
     margin: 50px auto;
-    margin-top: -35vh;
+    margin-top: 15vh;
     margin-left: -4vw;
     padding: 80px 290px;
     border-radius: 10px;
@@ -724,7 +737,7 @@ p {
 .offer-box:hover {
     background-color: rgba(255, 112, 35, 0.1);
     transform: scale(1.05);
-    box-shadow: 0 0 12px #ff7023;
+    box-shadow: 0 0 20px #ff7023b7;
 }
 
 .offer-text {
@@ -759,3 +772,5 @@ p {
         box-shadow: 0 0 12px #ff7023;
     }
 }
+
+
