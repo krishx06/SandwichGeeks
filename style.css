@@ -511,7 +511,7 @@ p {
     border-radius: 20px;
     border-top: none;
     border-left: none;
-    margin-top: -45vh;
+    margin-top: -30vh;
     margin-left: 75vw;
     box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.194);
     transition: all 0.3s ease-in-out;
@@ -553,4 +553,99 @@ p {
     margin-left: 71.5vw;
     margin-top: -25vh;
     display: block;
+}
+
+
+.feedback-container {
+    margin-top: -30vh;
+    margin-left: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.feedback-heading {
+    margin-top: 7vh;
+    display: inline-block;
+    color: black;
+    font-family: "Sedgwick Ave";
+    font-size: 80px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 30vh;
+    text-shadow: 0px 8px 2px rgba(0, 0, 0, 0.304);
+}
+.rule10 {
+    height: 2px;
+    width: 20%;
+    border: none;
+    background-color: #ff7023;
+    display: inline-block;
+    margin-left: 0%;
+    margin-bottom: 3.5vh;
+    margin-right: 59px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
+}
+
+.rule11 {
+    height: 2px;
+    width: 20%;
+    border: none;
+    background-color: #ff7023;
+    display: inline-block;
+    margin-bottom: 3.5vh;
+    margin-left: 59px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
+}
+.testimonial-section {
+    background-color: #ff8141; /* soft cream background */
+    max-width: 1000px;
+    margin: 50px auto;
+    margin-top: -35vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 layout */
+    gap: 40px;
+    padding: 60px;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-box {
+    background-color: #fff2e9;
+    width: 80%;
+    height: 160px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid #f2d3c2;
+    /* transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; */
+    transition: all 0.3s ease-in-out;
+}
+
+.feedback-box:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 2px 12px 24px rgba(255, 255, 255, 0.324);
+    background-color: #ffffff;
+    /* border: 0.5px solid black; */
+    cursor: pointer;
+}
+
+.feedback-text {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    font-style: italic;
+    margin: 0;
+}
+
+.user-name {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+    margin: 0;
 }
