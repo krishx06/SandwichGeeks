@@ -600,7 +600,7 @@ p {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
 }
 .testimonial-section {
-    background-color: #ff8141; /* soft cream background */
+    background-color: #ff742e; /* soft cream background */
     max-width: 1000px;
     margin: 50px auto;
     margin-top: -35vh;
@@ -651,4 +651,111 @@ p {
     font-weight: 500;
     margin: 0;
     
+}
+
+.offers-container {
+    margin-top: -30vh;
+    margin-left: 7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.offers-heading {
+    margin-top: 7vh;
+    display: inline-block;
+    color: black;
+    font-family: "Sedgwick Ave";
+    font-size: 80px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 30vh;
+    text-shadow: 0px 8px 2px rgba(0, 0, 0, 0.304);
+}
+
+.rule12 {
+    height: 2px;
+    width: 25%;
+    border: none;
+    background-color: #ff7023;
+    display: inline-block;
+    margin-left: 0%;
+    margin-bottom: 3.5vh;
+    margin-right: 59px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
+}
+
+.rule13 {
+    height: 2px;
+    width: 25%;
+    border: none;
+    background-color: #ff7023;
+    display: inline-block;
+    margin-bottom: 3.5vh;
+    margin-left: 59px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
+}
+.offer-section {
+    background-color: #000000;
+    width: 70%;
+    margin: 50px auto;
+    margin-top: -35vh;
+    margin-left: -4vw;
+    padding: 80px 290px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(255, 112, 35, 0.83);
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    text-align: center;
+    border: 2px solid #ff7023;
+    border-top: 3px solid #ff7023;
+}
+
+.offer-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed #ff7023;
+    padding: 28px 0px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    /* backdrop-filter: blur(3px); */
+}
+
+.offer-box:hover {
+    background-color: rgba(255, 112, 35, 0.1);
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #ff7023;
+}
+
+.offer-text {
+    font-family: "Niramit";
+    font-size: 24px;
+    font-style: italic;
+    color: #ff7023;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.badge {
+    background-color: #ff7023;
+    color: #000;
+    padding: 6px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 10px;
+    border-radius: 20px;
+    animation: pulseBadge 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseBadge {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px #ff7023;
+    }
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 0 12px #ff7023;
+    }
 }
