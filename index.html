@@ -17,9 +17,10 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href=#aboutus>About Us</a></li>
                         <li><a href="menu.html">Menu</a></li>
                         <li><a href="ambience.html">Ambience</a></li>
+                        <li><a href="signup.html">Login/Signup</a></li>
                         <!-- <div class="login"><li class="fourth"><a href="login.html">Login</a></li></div> -->
                     </ul>
                 </nav>
@@ -49,13 +50,13 @@
 
 <div class="button-container">
     <button class="side-btn">| Location</button>
-    <button class="top-products-btn">| Top Products</button>
+    <a href=#topproducts><button class="top-products-btn">| Top Products</button></a>
     <button class="side-btn">| Contact Us</button>
 </div>
 <hr class="rule1">
 
 <section class="abt">
-    <div class="about-us">
+    <div class="about-us" id="aboutus">
         <hr class="rule2">
         <h1 class="abt-heading">About Us</h1>
         <hr class="rule3">
@@ -87,7 +88,7 @@
 <div class="sideangle-img"><img class="sideangle-class" src="Sideangle.webp"></div>
 
 <section class="tp-section">
-    <div class="tp-container">
+    <div class="tp-container" id="topproducts">
         <hr class="rule4">
         <h1 class="tp-heading">Top Products</h1>
         <hr class="rule5">
@@ -155,13 +156,13 @@
 <section class="customer-feedback">
     <div class="feedback-container">
         <hr class="rule10">
-        <h1 class="feedback-heading">Customer Feedbacks</h1>
+        <h1 class="feedback-heading" id="customer-feedbacks">Customer Feedbacks</h1>
         <hr class="rule11">
     </div>
 </section>
 
 
-<div class="testimonial-section">
+<div class="testimonial-section" >
     <div class="feedback-box">
       <p class="feedback-text">“Absolutely love the Paneer Achari! Tangy, spicy, and so fresh.”</p>
       <p class="user-name">– Aarya S.</p>
@@ -198,7 +199,7 @@
 
 <div class="offer-section">
     <section class="special-offers">
-        <div class="offers-container">
+        <div class="offers-container" id="offers">
             <hr class="rule12">
             <h1 class="offers-heading">Special Offers</h1>
             <hr class="rule13">
@@ -226,7 +227,7 @@
 
         <div class="feedback-container-new">
             <hr class="rule14">
-            <h1 class="feedback-heading-new">We Value Your Feedback</h1>
+            <h1 class="feedback-heading-new" id="feedback-form">We Value Your Feedback</h1>
             <hr class="rule15">
         </div>
 
@@ -246,7 +247,7 @@
   
  <!-- Newsletter Section -->
 <section class="newsletter-footer">
-    <div class="newsletter-content">
+    <div class="newsletter-content" id="newsletter">
       <h2>Subscribe to our Newsletter</h2>
       <p>From crunchy bites to byte-sized updates—our newsletter serves up sizzling offers,<br> tasty surprises, and the freshest sandwich stories straight to your inbox!</p>
       <form class="subscribe-form">
@@ -256,55 +257,63 @@
     </div>
   
     <hr />
-  
-    <div class="footer-links">
-      <div class="brand">
-        <h3>S△LT</h3>
-        <div class="social-icons">
-          <i class="fab fa-discord"></i>
-          <i class="fab fa-telegram-plane"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-youtube"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-linkedin-in"></i>
+    <div class="footer-columns">
+        <div class="brand">
+          <div class="logo-container">
+            <div>
+              <h1 class="footer-logo">Sandwich<br>Geeks</h1>
+            </div>
+            <div class="footer-logo-image-div">
+              <img class="footer-logo-image" src="image 3.png" alt="LogoImage">
+            </div>
+          </div>
         </div>
-      </div>
-  
-      <div class="link-group">
-        <h4>Products</h4>
-        <ul>
-          <li>Home</li>
-          <li>Business Loans</li>
-          <li>Personal Loans</li>
-          <li>Features</li>
-          <li>Stabilisation</li>
-        </ul>
-      </div>
-  
-      <div class="link-group">
-        <h4>About SALT</h4>
-        <ul>
-          <li>Company</li>
-          <li>Careers</li>
-          <li>Media Kit</li>
-          <li>Authorized Partner</li>
-        </ul>
-      </div>
-  
-      <div class="link-group">
-        <h4>Resources</h4>
-        <ul>
-          <li>Blog</li>
-          <li>UNSALTED Podcast</li>
-          <li>Update & FAQs</li>
-          <li>Licenses</li>
-        </ul>
-      </div>
-    </div>
+      
+        <div class="link-group1">
+            <h3>Our Brand:</h3>
+            <ul class="our-brand">
+              <li><a href="#aboutus">About Us</a></li>
+              <li><a href="#topproducts">Top Products</a></li>
+              <li><a href="#customer-feedbacks">Reviews</a></li>
+              <li><a href="#offers">Offers</a></li>
+            </ul>
+          </div>
+          
+          <div class="link-group2">
+            <h3>More:</h3>
+            <ul class="more">
+              <li><a href="#ambience">Ambience</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#newsletter">Newsletter</a></li>
+              <li><a href="#account">Account</a></li>
+            </ul>
+          </div>
+          
+      
+          <div class="link-group3">
+            <h3>Our Socials:</h3>
+            <ul class="social-icons-grid">
+              <li><a href="#" class="social-btn ig"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#" class="social-btn yt"><i class="fab fa-youtube"></i></a></li>
+              <li><a href="#" class="social-btn tw"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#" class="social-btn lin"><i class="fab fa-linkedin"></i></a></li>
+              <li><a href="#" class="social-btn fb"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="#" class="social-btn dc"><i class="fab fa-discord"></i></a></li>
+
+            </ul>
+          </div>
+          
+    </div>      
+
   </section>
   
-
   
+<footer>
+    <div class="footer-bottom-bar">
+        <p class="p1">An Exotic Sandwich Brand <br></p>
+        <p class="p2">Copyright © 2025 All rights reserved. Made with ♡ in Pune.</p>
+    </div>
+</footer>
   
 </body>
 </html>

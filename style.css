@@ -978,11 +978,14 @@ p {
 .newsletter-footer {
   background: linear-gradient(280deg, #ea5600, #ff7919, #f75b00);
   /* background: #ff6d1e; */
+  max-width: 100%;
   color: rgb(0, 0, 0);
   padding: 60px 40px;
+  padding-bottom: 100px;
   border-radius: 20px;
   font-family: 'Segoe UI', sans-serif;
   margin-top: 15vh;
+  box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.301);
 }
 
 .newsletter-content {
@@ -1070,70 +1073,161 @@ p {
 }
 
 hr {
-  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
   margin: 40px 0;
 }
 
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
+.logo-container {
+    display: block;
+    margin-left: 2vw;
+    margin-top: -4vh;
+}
+.footer-logo {
+    font-family: 'Sedgwick Ave';
+    font-size: 60px;
+    letter-spacing: 1px;
 }
 
-.brand {
-  flex: 1 1 250px;
+.footer-logo-image {
+    height: 65px;
+    width: 85px;
+}
+.footer-logo-image-div {
+    margin-top: -15vh;
+    margin-left: 11vw;
 }
 
-.brand h3 {
-  font-size: 24px;
-  color: #00ffb3;
-}
+.footer-columns {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    /* align-items: flex-start; */
+  }
+  
+  .footer-columns > div {
+    flex: 1;
+    width: 100px;
+  }
+  
+  .link-group1 {
+    margin-left: 10vw;
+  }
 
-.brand p {
-  font-size: 13px;
-  margin-top: 10px;
-  opacity: 0.9;
-  color: white;
-}
+  .link-group1 h3,
+  .link-group2 h3,
+    .link-group3 h3 {
+        font-family: 'Niramit';
+        font-weight: bold;
+        font-size: larger;
+    }
 
-.social-icons i {
-  font-size: 18px;
-  margin-right: 10px;
-  margin-top: 15px;
-  cursor: pointer;
-  color: white;
-  transition: 0.3s;
-  color: white;
-}
+  .link-group1 ul,
+  .link-group2 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Reduced gap between list items */
+    
+  }
 
-.social-icons i:hover {
-  color: #00ffb3;
-}
+  .link-group1 li,
+  .link-group2 li {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4; /* Tighter vertical spacing */
+    font-size: 16px;
+    font-family: 'Niramit';
+    text-decoration: none;
+  }
+  .link-group1 li a,
+  .link-group2 li a {
+    text-decoration: none;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.304);
+  }
 
-.link-group {
-  flex: 1 1 150px;
-}
+  .social-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 icons per row */
+    list-style: none;
+    padding: 0;
+    /* margin: 5px 0; */
+    justify-items: center;
+    margin-right: 20vw;
+    margin-left: -0.8vw;
+  }
+  
+  .social-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1); /* frosted glass effect */
+    backdrop-filter: blur(8px); /* blur background behind it */
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  
+  
+  .social-icons-grid li {
+    display: flex;
+    margin: -2.3vh;
+    /* margin-left: -5vw; */
+    margin-right: -1.2vw;
+  }
+  
+  .social-btn:hover {
+    transform: scale(1.1);
+    color: #ff7d12;
+  }
+  
+  /* Optional: Color hovers */
+  .ig:hover  { background-color: #000000; }
+  .yt:hover  { background-color: #000000; }
+  .tw:hover  { background-color: #000000; }
+  .lin:hover { background-color: #000000; }
+  .fb:hover  { background-color: #000000; }
+  .dc:hover  { background-color: #000000; }
 
-.link-group h4 {
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: white;
-}
+  .footer-bottom-bar {
+    max-width: 100%;
+    background-color: #000000;
+    color: #ffffff86;
+    height: 90px;
+    text-align: center;
+    padding: 15px 10px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: -5vh;
+    border-radius: 0 0 20px 20px;
+  }
 
-.link-group ul {
-  list-style: none;
-  padding: 0;
-}
+  .p2 {
+    text-align: center;
+    margin-left: 0vw;
+    margin-top: -0.5vh;
+    font-family: 'Niramit';
+  }
+  .p1 {
+    text-align: center;
+    margin-top: 1vh;
+    margin-left: 0vw;
+    font-family: 'Niramit';
+    letter-spacing: 1px;
+    color: white;
+    font-size: 16px;
+  }
+  
 
-.link-group li {
-  margin-bottom: 8px;
-  font-size: 13px;
-  cursor: pointer;
-  opacity: 0.85;
-  color: white;
-}
 
-.link-group li:hover {
-  color: #00ffb3;
-}
+
