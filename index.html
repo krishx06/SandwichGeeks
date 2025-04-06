@@ -65,7 +65,25 @@
     of flavor that’s sure to bring a smile.</p>
 
 <p class="abt-para" style="padding-top: 16vh;">Founded with a passion for food and a love for community, <span style="font-family: Sedgwick Ave; color: #ff7023;">Sandwich Geeks</span> is a place<br> for everyone—whether you’re looking for a quick lunch, a cozy family meal,<br> or a new local favorite. Our Geeks take pride in making each sandwich with care, <br>drawing from classic recipes and innovative flavor combinations. We aim to create an<br> experience that’s not just about the food but about the warmth and enjoyment <br>that good food can bring.</p>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const target = document.querySelector('.sideangle-class');
+  
+      function handleScroll() {
+        const rect = target.getBoundingClientRect();
+        const triggerPoint = window.innerHeight * 0.85;
+  
+        if (rect.top < triggerPoint) {
+          target.classList.add('slide-in');
+          window.removeEventListener('scroll', handleScroll); // Optional: remove once shown
+        }
+      }
+  
+      window.addEventListener('scroll', handleScroll);
+      handleScroll(); // Initial check in case it's already in view
+    });
+  </script>
+  
 <div class="sideangle-img"><img class="sideangle-class" src="Sideangle.webp"></div>
 
 <section class="tp-section">
