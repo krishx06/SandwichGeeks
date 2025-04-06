@@ -351,7 +351,13 @@ p {
 .pa1 {
     margin-top: 4vh;
 }
-.pa1-img {
+@keyframes floatUpDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .pa1-img {
     border: 2px solid black;
     border-radius: 20px;
     border-top: none;
@@ -359,12 +365,17 @@ p {
     margin-top: -15vh;
     margin-left: 10vh;
     transition: all 0.3s ease-in-out;
-}
-.pa1-img:hover {
-    transform: translateY(-10px) scale(1.03);
-    transition: 0.5s;
+    
+    animation: floatUpDown 2s ease-in-out infinite;
+    will-change: transform;
+  }
+  
+  .pa1-img:hover {
+    /* transform: translateY(-10px) scale(1.03);
+    transition: 0.5s; */
     cursor: pointer;
-}
+  }
+  
 .title1 {
     color: black;
     font-family: "Niramit";
@@ -408,6 +419,8 @@ p {
     margin-top: -45vh;
     margin-left: 75vw;
     transition: all 0.3s ease-in-out;
+    animation: floatUpDown 2s ease-in-out infinite;
+    will-change: transform;
     
 }
 .pa2-img:hover {
@@ -462,6 +475,8 @@ p {
     margin-left: 10vh;
     transition: all 0.3s ease-in-out;
     box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.194);
+    animation: floatUpDown 2s ease-in-out infinite;
+    will-change: transform;
 }
 .pa3-img:hover {
     transform: translateY(-10px) scale(1.03);
@@ -515,6 +530,8 @@ p {
     margin-left: 75vw;
     box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.194);
     transition: all 0.3s ease-in-out;
+    animation: floatUpDown 2s ease-in-out infinite;
+    will-change: transform;
     
 }
 .pa4-img:hover {
@@ -676,10 +693,10 @@ p {
 }
 @keyframes glowPulse {
     0%, 100% {
-        text-shadow: 0 0 0px #ff7023;
+        text-shadow: 0 0 2px #ff7023;
     }
     50% {
-        text-shadow: 0 0 12px #ff6919bf;
+        text-shadow: 0 0 18px #ff6919bf;
     }
 }
 
@@ -732,6 +749,7 @@ p {
     border-radius: 20px;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     /* backdrop-filter: blur(3px); */
+    
 }
 
 .offer-box:hover {
@@ -774,3 +792,124 @@ p {
 }
 
 
+
+
+
+.feedback-container-new {
+    margin-top: -26vh;
+    margin-left: 0vw;
+    margin-bottom: -35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+  .feedback-heading-new {
+    display: inline-block;
+    color: black;
+    font-family: "Sedgwick Ave";
+    font-size: 74px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 30vh;
+    text-shadow: 0px 8px 2px rgba(0, 0, 0, 0.304);
+  }
+
+  .rule14 {
+    height: 2px;
+    width: 20%;
+    border: none;
+    background-color: #ff7023;
+    display: inline-block;
+    margin-left: 3vw;
+    /* margin-left: 0%;
+    margin-bottom: 3.5vh;
+    margin-right: 59px; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
+}
+
+.rule15 {
+    height: 2px;
+    width: 20%;
+    border: none;
+    background-color: #ff7023;
+    display: inline-block;
+    margin-right: 3vw;
+    /* margin-bottom: 3.5vh; 
+    margin-left: 59px; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
+}
+  
+  .feedback-desc-new {
+    font-size: 22px;
+    font-family: 'Niramit', sans-serif;
+    color: #ff6717;
+    margin-left: 1vw;
+    margin-bottom: 3vh;
+    margin-top: 1vh;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.168);
+    /* display: flex; */
+  }
+  
+  
+  .feedback-card-new {
+    max-width: 700px;
+    background: #000000;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    border: 1px solid #ff7023b1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+
+  }
+  .feedback-card-new:hover {
+    transform: scale(1.02);
+    box-shadow: 0 1px 25px rgb(255, 111, 0);
+  }
+  
+  .feedback-form-new {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .feedback-form-new input,
+  .feedback-form-new textarea {
+    padding: 14px 18px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+  }
+
+  .feedback-form-new input:hover,
+  .feedback-form-new textarea:hover {
+    transform: scale(1.03);
+  }
+  
+  .feedback-form-new input:focus,
+  .feedback-form-new textarea:focus {
+    border-color: #ff6816;
+    box-shadow: 0 0 5px rgba(255, 112, 35, 0.3);
+    outline: none;
+  }
+  
+  .feedback-form-new button {
+    background-color: #fd6717;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .feedback-form-new button:hover {
+    background-color: #000000;
+    
+  }
+  
