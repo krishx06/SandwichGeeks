@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sandwich Geeks</title>
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="signin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
@@ -28,34 +28,30 @@
     </header>
 
 
-    <section class="signup-section">
-        <div class="signup-div" id="signup">
+    <section class="signin-section">
+        <div class="signin-div" id="signin">
             <hr class="rule1">
-            <h1 class="signup-heading">Signup</h1>
+            <h1 class="signin-heading">Sign In</h1>
             <hr class="rule2">
         </div>
     </section>
-
-    <div class="signup-card">
-        <form class="signup-form">
-          <label for="name">Full Name:</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required>
-      
-          <label for="email">Email Address:</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required>
-      
-          <label for="phone">Mobile Number:</label>
-          <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
-      
-          <label for="password">Create Password:</label>
-          <input type="password" id="password" name="password" placeholder="Enter a strong password" required>
-      
-          <button type="submit">Sign Up</button>
+    
+    <div class="signin-card">
+        <form class="signin-form">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    
+            <button type="submit">Sign In</button>
         </form>
+        
         <div class="signin-prompt">
-            <p>Already have an account? <a href="signin.html">Sign in</a></p>
-          </div>
-      </div>
+            <p>Don't have an account yet? <a href="signup.html">Sign up</a></p>
+        </div>
+    </div>
+    
     
       
 

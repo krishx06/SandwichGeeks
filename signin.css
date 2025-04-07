@@ -88,11 +88,11 @@ a:visited {
 
 
 
-.signup-div {
+.signin-div {
     margin-top: -10vh;
 }
 
-.signup-heading {
+.signin-heading {
     display: inline-block;
     color: black;
     font-family: "Sedgwick Ave";
@@ -127,7 +127,7 @@ a:visited {
 }
 
 
-.signup-card {
+.signin-card {
     width: 90%;
     max-width: 500px;
     margin: 0 auto;
@@ -141,20 +141,20 @@ a:visited {
     z-index: 10;
   }
   
-  .signup-form {
+  .signin-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
   
-  .signup-form label {
+  .signin-form label {
     font-weight: 500;
     text-align: left;
     margin-left: 1vw;
     color: #000;
   }
   
-  .signup-form input {
+  .signin-form input {
     padding: 12px 20px;
     border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -172,21 +172,21 @@ a:visited {
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.16);
   }
 
-  .signup-form input::placeholder {
+  .signin-form input::placeholder {
     color: rgba(0, 0, 0, 0.39);
     opacity: 1;
   }
-  .signup-form input:focus {
+  .signin-form input:focus {
     background: rgba(255, 255, 255, 0.271);
   }
-  .signup-form input:hover {
+  .signin-form input:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.169);
     color: #000;
     transform: scale(1.02);
     transition: all 0.2s ease-in-out;
   }
   
-  .signup-form button {
+  .signin-form button {
     border-radius: 30px;
     /* margin-bottom: 5vh; */
     padding: 12px 20px;
@@ -206,7 +206,7 @@ a:visited {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.264);
   }
   
-  .signup-form button:hover {
+  .signin-form button:hover {
     scale: 1.03;
     background: #000000;
     color: #ff7023;
@@ -509,7 +509,7 @@ a:visited {
       font-size: 16px;
     }
     
-  
+
   
   
   
