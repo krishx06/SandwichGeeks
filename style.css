@@ -954,7 +954,7 @@ p {
   
   .feedback-form-new button {
     background-color: #fd6717;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 12px;
     font-size: 16px;
     border: none;
@@ -968,6 +968,7 @@ p {
   .feedback-form-new button:hover {
     background-color: #000000;
     border: 1px solid #ff7023;
+    color: #ff7023;
     
   }
   
