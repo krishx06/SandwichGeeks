@@ -316,5 +316,23 @@
     </div>
 </footer>
   
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+<script>
+    VanillaTilt.init(document.querySelector(".testimonial-section"), {
+      max: 3,
+      speed: 950,
+      glare: true,
+      "max-glare": 0.1,
+    });
+  </script>
+  <script>
+    VanillaTilt.init(document.querySelector(".feedback-card-new"), {
+      max: 4,
+      speed: 650,
+      glare: true,
+      "max-glare": 0.2,
+    });
+  </script>
 </body>
 </html>

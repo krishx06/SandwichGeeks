@@ -916,11 +916,11 @@ p {
     padding: 40px 30px;
     border: 1px solid #ff7023b1;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease-in-out;
+    /* transition: all 0.3s ease-in-out; */
 
   }
   .feedback-card-new:hover {
-    transform: scale(1.02);
+    /* transform: scale(1.02); */
     box-shadow: 0 1px 25px rgb(255, 111, 0);
   }
   
