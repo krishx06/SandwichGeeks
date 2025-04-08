@@ -1,0 +1,502 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+
+body {
+    background-image: url('MacBook\ Pro\ 14_\ -\ 2.png');
+    font-family: niramit;
+    overflow-x: hidden;
+
+}
+.container {
+    height: 4rem; 
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+.glass-card {
+    background: white;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.2)
+    );
+    margin: 0;
+
+    backdrop-filter: blur(1rem);
+    width: 100%;
+    height: 10vh;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.249);
+    position: fixed;
+}
+
+ul {
+    padding-top: 0px;
+}
+ul li{
+    font-size: 18px;
+    display: inline;
+    color: black;
+    justify-content: space-evenly;
+    padding: 25px;
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.137);
+}
+/* ul li a {
+    text-decoration: none;
+    color: black;
+} */
+nav ul li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    padding: 3px 0;
+    transition: color 0.3s;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ff7023;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+a:link {
+    color: black;  
+}
+
+a:visited {
+    color: black;
+}
+
+.newsletter-footer {
+    background: linear-gradient(280deg, #ea5600, #ff7919, #f75b00);
+    /* background: #ff6d1e; */
+    max-width: 100%;
+    color: rgb(0, 0, 0);
+    padding: 60px 40px;
+    padding-bottom: 100px;
+    border-radius: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    margin-top: 15vh;
+    box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.301);
+  }
+  
+  .newsletter-content {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: -2vh;
+  }
+  
+  .newsletter-content h2 {
+    font-family: 'Sedgwick Ave';
+    letter-spacing: 1px;
+    font-size: 60px;
+    font-weight: normal;
+    margin-bottom: 3vh;
+    color: rgb(0, 0, 0);
+    text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.323);
+  
+  }
+  
+  .newsletter-content p {
+    font-size: 16px;
+    opacity: 0.7;
+    color: rgb(0, 0, 0);
+    margin-bottom: 5vh;
+    margin-left: 0vw;
+    line-height: 2.5vh;
+    /* text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.304); */
+  }
+  
+  .subscribe-form {
+    margin-top: 6vh;
+    color: rgb(0, 0, 0);
+  }
+  
+  .subscribe-form input {
+      padding: 12px 20px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      height: 36px;
+      width: 350px;
+      margin-right: 10px;
+      outline: none;
+      font-size: 16px;
+      font-family: 'Niramit';
+      background: rgba(255, 255, 255, 0.141);
+      /* background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px); */
+      color: rgb(0, 0, 0);
+      transition: all 0.3s ease-in-out;
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.16);
+    }
+    
+    .subscribe-form input::placeholder {
+      color: rgba(0, 0, 0, 0.39);
+      opacity: 1;
+    }
+    
+    .subscribe-form input:focus {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+  
+  .subscribe-form button {
+    border-radius: 30px;
+    margin-bottom: 5vh;
+    height: 62px;
+    letter-spacing: 1.1px;
+    margin-left: -5vw;
+    margin-top: -3vh;
+    width: 150px;
+    border: 1px solid black;
+    background: #000000;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 22px;
+    cursor: pointer;
+    font-family: 'Sedgwick Ave';
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .subscribe-form button:hover {
+    background: #000000;
+    color: #ff7023;
+    box-shadow: 0 0 24px rgba(255, 102, 1, 0.3);
+  }
+  
+  hr {
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    margin: 40px 0;
+  }
+  
+  .logo-container {
+      display: block;
+      margin-left: 2vw;
+      margin-top: -4vh;
+  }
+  .footer-logo {
+      font-family: 'Sedgwick Ave';
+      font-size: 60px;
+      letter-spacing: 1px;
+  }
+  
+  .footer-logo-image {
+      height: 65px;
+      width: 85px;
+  }
+  .footer-logo-image-div {
+      margin-top: -15vh;
+      margin-left: 11vw;
+  }
+  
+  .footer-columns {
+      display: flex;
+      /* justify-content: space-between; */
+      flex-wrap: wrap;
+      /* align-items: flex-start; */
+    }
+    
+    .footer-columns > div {
+      flex: 1;
+      width: 100px;
+    }
+    
+    .link-group1 {
+      margin-left: 10vw;
+    }
+  
+    .link-group1 h3,
+    .link-group2 h3,
+      .link-group3 h3 {
+          font-family: 'Niramit';
+          font-weight: bold;
+          font-size: larger;
+      }
+  
+    .link-group1 ul,
+    .link-group2 ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px; /* Reduced gap between list items */
+      
+    }
+  
+    .link-group1 li,
+    .link-group2 li {
+      margin: 0;
+      padding: 0;
+      line-height: 1.4; /* Tighter vertical spacing */
+      font-size: 16px;
+      font-family: 'Niramit';
+      text-decoration: none;
+    }
+    .link-group1 li a,
+    .link-group2 li a {
+      position: relative;
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      font-family: 'Niramit';
+      font-size: 16px;
+      padding-bottom: 2px;
+      text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.304);
+      transition: color 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .link-group1 li a::after,
+    .link-group2 li a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: black;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .link-group1 li a:hover,
+    .link-group2 li a:hover {
+      transform: scale(1.05);
+      transform-origin: left center;
+    }
+    
+    .link-group1 li a:hover::after,
+    .link-group2 li a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    
+    
+  
+    .social-icons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 icons per row */
+      list-style: none;
+      padding: 0;
+      /* margin: 5px 0; */
+      justify-items: center;
+      margin-right: 20vw;
+      margin-left: -0.8vw;
+    }
+    
+    .social-btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1); /* frosted glass effect */
+      backdrop-filter: blur(8px); /* blur background behind it */
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    
+    
+    .social-icons-grid li {
+      display: flex;
+      margin: -2.3vh;
+      /* margin-left: -5vw; */
+      margin-right: -1.2vw;
+    }
+    
+    .social-btn:hover {
+      transform: scale(1.1);
+      color: #ff7d12;
+    }
+    
+    /* Optional: Color hovers */
+    .ig:hover  { background-color: #000000; }
+    .yt:hover  { background-color: #000000; }
+    .tw:hover  { background-color: #000000; }
+    .lin:hover { background-color: #000000; }
+    .fb:hover  { background-color: #000000; }
+    .dc:hover  { background-color: #000000; }
+  
+    .footer-bottom-bar {
+      max-width: 100%;
+      background-color: #000000;
+      color: #ffffff86;
+      height: 90px;
+      text-align: center;
+      padding: 15px 10px;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-top: -5vh;
+      border-radius: 0 0 20px 20px;
+    }
+  
+    .p2 {
+      text-align: center;
+      margin-left: 0vw;
+      margin-top: -0.5vh;
+      font-family: 'Niramit';
+    }
+    .p1 {
+      text-align: center;
+      margin-top: 1vh;
+      margin-left: 0vw;
+      font-family: 'Niramit';
+      letter-spacing: 1px;
+      color: white;
+      font-size: 16px;
+    }
+    
+
+
+    .ambience-div {
+        margin-top: -7vh;
+    }
+    
+    .ambience-heading {
+        display: inline-block;
+        color: black;
+        font-family: "Sedgwick Ave";
+        font-size: 80px;
+        font-weight: normal;
+        text-align: center;
+        line-height: 30vh;
+        text-shadow: 0px 8px 2px rgba(0, 0, 0, 0.304);
+    }
+    
+    .rule1 {
+        height: 2px;
+        width: 27%;
+        border: none;
+        background-color: #ff7023;
+        display: inline-block;
+        margin-left: 9.5vw;
+        margin-bottom: 3.5vh;
+        margin-right: 5vh;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
+    }
+    
+    .rule2 {
+        height: 2px;
+        width: 27%;
+        border: none;
+        background-color: #ff7023;
+        display: inline-block;
+        margin-bottom: 3.5vh;
+        margin-left: 5vh;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
+    }
+
+
+    .ambiencediv1 {
+        margin-top: -5vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+    }
+    
+    
+    
+    .ambience-overlay-container {
+        position: relative;
+        width: 95%;                 /* was 90% */
+        max-width: 900px;           /* was 700px */
+        margin: 0 auto;
+        border-radius: 30px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+    }
+    
+    .ambienceimg1 {
+        width: 100%;
+        height: auto;
+        max-height: 550px;          /* was 420px */
+        border-radius: 30px;
+        object-fit: cover;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
+        transition: all 0.4s ease;
+        display: block;
+    }
+
+    
+    
+    /* Orange Tint Layer */
+    .ambience-color-tint {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.586); /* orange with transparency */
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: 1;
+    }
+    
+    /* Text Overlay */
+    .ambience-overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-align: center;
+        font-size: 1.8rem;
+        font-family: 'Niramit';
+        font-weight: normal;
+        opacity: 0;
+        z-index: 2;
+        transition: opacity 0.4s ease;
+        padding: 20px;
+        text-shadow: 0px 1px 4px rgb(0, 0, 0);
+        pointer-events: none;
+    }
+    
+    /* Hover Effects */
+    .ambience-overlay-container:hover {
+        box-shadow: 0px 2px 18px rgb(255, 102, 0);
+    }
+    .ambience-overlay-container:hover .ambienceimg1 {
+        filter: blur(8px) brightness(0.7);
+        transform: scale(1.06);
+    }
+    
+    .ambience-overlay-container:hover .ambience-color-tint {
+        opacity: 1;
+    }
+    
+    .ambience-overlay-container:hover .ambience-overlay-text {
+        opacity: 1;
+    }
+    
