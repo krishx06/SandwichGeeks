@@ -7,7 +7,7 @@ const Ambience = () => {
   return (
         <div
   style={{
-    backgroundImage: `url("/assets/images/macbook.png")`,
+    backgroundImage: `url("/assets/images/BackgroundImg.png")`,
     fontFamily: "Niramit",
     overflowX: "hidden",
     margin: "0"
@@ -48,12 +48,12 @@ const Ambience = () => {
 
         <div className="ambiencediv1">
           {[
-            { src: 'src/images/Ambienceee.jpg', text: 'Cozy Café with a View' },
-            { src: 'src/images/Ambienceee7.jpg', text: 'Minimalist Charm with a Homely Touch' },
-            { src: 'src/images/Ambienceee3.jpg', text: 'Fresh & Airy Outdoors' },
-            { src: 'src/images/Ambienceee4.jpg', text: 'Nature-Framed Serenity' },
-            { src: 'src/images/Ambienceee5.jpg', text: 'Soft Lights & Rustic Vibes' },
-            { src: 'src/images/Ambienceee9.jpg', text: 'Warm Wood, Natural Light' },
+            { src: '/assets/images/Ambienceee.jpg', text: 'Cozy Café with a View' },
+            { src: '/assets/images/Ambienceee7.jpg', text: 'Minimalist Charm with a Homely Touch' },
+            { src: '/assets/images/Ambienceee3.jpg', text: 'Fresh & Airy Outdoors' },
+            { src: '/assets/images/Ambienceee4.jpg', text: 'Nature-Framed Serenity' },
+            { src: '/assets/images/Ambienceee5.jpg', text: 'Soft Lights & Rustic Vibes' },
+            { src: '/assets/images/Ambienceee9.jpg', text: 'Warm Wood, Natural Light' },
           ].map((item, index) => (
             <div className="ambience-overlay-container" key={index}>
               <img src={item.src} alt={`Ambience ${index + 1}`} className="ambienceimg1" />
@@ -83,7 +83,7 @@ const Ambience = () => {
             <div className="logo-container">
               <h1 className="footer-logo">Sandwich<br />Geeks</h1>
               <div className="footer-logo-image-div">
-                <img className="footer-logo-image" src="/src/images/image 3.png" alt="Logo" />
+                <img className="footer-logo-image" src="/assets/images/image 3.png" alt="Logo" />
               </div>
             </div>
           </div>

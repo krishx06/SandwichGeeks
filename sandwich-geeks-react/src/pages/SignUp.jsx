@@ -17,7 +17,7 @@ const Signup = () => {
   return (
     <div
     style={{
-      backgroundImage: `url(${MacBookImage})`,
+      backgroundImage: `url("/assets/images/BackgroundImg.png")`,
       fontFamily: "Niramit",
       overflowX: "hidden",
       margin: "0"
@@ -97,7 +97,7 @@ const Signup = () => {
                 <h1 className="footer-logo">Sandwich<br />Geeks</h1>
               </div>
               <div className="footer-logo-image-div">
-                <img className="footer-logo-image" src="/src/images/image 3.png" alt="LogoImage" />
+                <img className="footer-logo-image" src="/assets/images/image 3.png" alt="LogoImage" />
               </div>
             </div>
           </div>

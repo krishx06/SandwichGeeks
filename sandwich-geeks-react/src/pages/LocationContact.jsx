@@ -23,7 +23,7 @@ const LocationContact = () => {
   return (
     <div
     style={{
-      backgroundImage: `url(${MacBookImage})`,
+      backgroundImage: `url("/assets/images/BackgroundImg.png")`,
       fontFamily: "Niramit",
       overflowX: "hidden",
       margin: "0"
@@ -112,7 +112,7 @@ const LocationContact = () => {
                 </h1>
               </div>
               <div className="footer-logo-image-div">
-                <img className="footer-logo-image" src="/src/images/image 3.png" alt="Logo" />
+                <img className="footer-logo-image" src="/assets/images/image 3.png" alt="Logo" />
               </div>
             </div>
           </div>
