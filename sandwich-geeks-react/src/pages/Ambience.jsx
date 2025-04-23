@@ -1,14 +1,13 @@
 import React from 'react';
 import '../styles//ambience.css';
 import { Link } from 'react-router-dom';
-import MacBookImage from '../images/BackgroundImg.png';
 
 
 const Ambience = () => {
   return (
         <div
   style={{
-    backgroundImage: `url(${MacBookImage})`,
+    backgroundImage: `url("/assets/images/macbook.png")`,
     fontFamily: "Niramit",
     overflowX: "hidden",
     margin: "0"

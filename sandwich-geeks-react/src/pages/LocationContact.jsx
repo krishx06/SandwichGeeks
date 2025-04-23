@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/locationcontact.css"; 
 import { Link } from "react-router-dom";
-import MacBookImage from '../images/BackgroundImg.png';
 import { useEffect } from 'react';
 
 const LocationContact = () => {

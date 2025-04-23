@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/menu.css";
 import { Link } from "react-router-dom";
-import MacBookImage from "../images/BackgroundImg.png";
 
 function SandwichGeeksMenu() {
   return (

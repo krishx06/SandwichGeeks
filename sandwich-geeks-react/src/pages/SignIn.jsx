@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "../styles/signin.css";
 import { Link } from "react-router-dom";
-import MacBookImage from '../images/BackgroundImg.png';
 
 const SignIn = () => {
     useEffect(() => {

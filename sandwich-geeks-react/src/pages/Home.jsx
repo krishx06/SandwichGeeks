@@ -2,10 +2,8 @@ import React from "react";
 import "../styles/style.css";
 import VanillaTilt from "vanilla-tilt";
 import { useEffect, useRef } from "react";
-import MacBookImage from '../images/BackgroundImg.png';
 import { Link } from 'react-router-dom';
-import image3 from '../images/image 3.png';
-import image from '../images/image.png';
+
 
 
 const Home = () => {
@@ -48,7 +46,7 @@ const Home = () => {
   return (
     <div
   style={{
-    backgroundImage: `url(${MacBookImage})`,
+    backgroundImage: `url("/assets/images/BackgroundImg.png")`,
     fontFamily: "Niramit",
     overflowX: "hidden",
     margin: "0"
@@ -97,12 +95,12 @@ const Home = () => {
         </p>
         <hr className="vertical-line" />
         <div className="logo-image">
-          <img src={image3} alt="Logo" />
+          <img src="/assets/images/image 3.png" alt="Logo" />
         </div>
         <div className="index">
           <img
             className="imgclass"
-            src={image}
+            src="/assets/images/image.png"
             alt="Sandwich"
           />
         </div>
@@ -168,7 +166,7 @@ const Home = () => {
         <img
           ref={targetRef}
           className="sideangle-class"
-          src="/src/images/Sideangle.webp"
+          src="/assets/images/Sideangle.webp"
           alt="Side Image"
         />
       </div>
@@ -186,7 +184,7 @@ const Home = () => {
       <div className="pa1">
         <img
           className="pa1-img"
-          src="/src/images/image 17.png"
+          src="/assets/images/image 17.png"
           alt="Paneer Achari"
         />
         <hr className="rule6" />
@@ -240,7 +238,7 @@ const Home = () => {
         <hr className="rule7" />
         <img
           className="pa2-img"
-          src="/src/images/image 18.png"
+          src="/assets/images/image 18.png"
           alt="Crunchy Mexican"
         />
       </div>
@@ -274,7 +272,7 @@ const Home = () => {
         <hr className="rule8" />
         <img
           className="pa3-img"
-          src="/src/images/HotBeverages_04_CafeMocha.png"
+          src="/assets/images/HotBeverages_04_CafeMocha.png"
           alt="Cafe Mocha"
         />
       </div>
@@ -302,7 +300,7 @@ const Home = () => {
         <hr className="rule9" />
         <img
           className="pa4-img"
-          src="/src/images/ColdBeverages_10_JavaChipIcedCapp.png"
+          src="/assets/images/ColdBeverages_10_JavaChipIcedCapp.png"
           alt="Java Chip Frappe"
         />
       </div>
@@ -456,7 +454,7 @@ const Home = () => {
               <div className="footer-logo-image-div">
                 <img
                   className="footer-logo-image"
-                  src="/src/images/image 3.png"
+                  src="/assets/images/image 3.png"
                   alt="Logo Image"
                 />
               </div>
