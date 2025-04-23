@@ -109,7 +109,7 @@ const Signup = () => {
               <li><a href="/index#topproducts">Top Products</a></li>
               <li><a href="/index#customer-feedbacks">Reviews</a></li>
               <li><a href="/index#offers">Offers</a></li>
-              <li><a href="/locationcontact">Location</a></li>
+              <li><Link to="/locationcontact">Location</Link></li>
             </ul>
           </div>
 

@@ -95,7 +95,7 @@ const Ambience = () => {
               <li><a href="/#topproducts">Top Products</a></li>
               <li><a href="/#customer-feedbacks">Reviews</a></li>
               <li><a href="/#offers">Offers</a></li>
-              <li><a href="/locationcontact">Location</a></li>
+              <li><Link to="/locationcontact">Location</Link></li>
             </ul>
           </div>
 

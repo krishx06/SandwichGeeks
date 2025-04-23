@@ -477,7 +477,7 @@ const Home = () => {
                 <a href="#offers">Offers</a>
               </li>
               <li>
-                <a href="/locationcontact">Location</a>
+              <Link to="/locationcontact">Location</Link>
               </li>
             </ul>
           </div>

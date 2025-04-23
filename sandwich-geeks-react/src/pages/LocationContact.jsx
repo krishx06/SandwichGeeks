@@ -124,7 +124,7 @@ const LocationContact = () => {
               <li><a href="index.html#topproducts">Top Products</a></li>
               <li><a href="index.html#customer-feedbacks">Reviews</a></li>
               <li><a href="index.html#offers">Offers</a></li>
-              <li><a href="/locationcontact">Location</a></li>
+              <li><Link to="/locationcontact">Location</Link></li>
             </ul>
           </div>
 
