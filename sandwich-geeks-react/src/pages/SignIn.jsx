@@ -69,7 +69,7 @@ const SignIn = () => {
         </form>
 <br /><br /><br /><br />
         <div className="signin-prompt">
-          <p style={{fontSize: "large"}}>Don't have an account yet? <a href="/signup">Sign up</a></p>
+          <p style={{fontSize: "large"}}>Don't have an account yet? <Link to="/signup">Sign up</Link></p>
         </div>
       </div>
 
