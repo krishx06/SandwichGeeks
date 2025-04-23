@@ -4,6 +4,8 @@ import VanillaTilt from "vanilla-tilt";
 import { useEffect, useRef } from "react";
 import MacBookImage from '../images/BackgroundImg.png';
 import { Link } from 'react-router-dom';
+import image3 from '../images/image 3.png';
+import image from '../images/image.png';
 
 
 const Home = () => {
@@ -95,12 +97,12 @@ const Home = () => {
         </p>
         <hr className="vertical-line" />
         <div className="logo-image">
-          <img src="/src/images/image 3.png" alt="Logo" />
+          <img src={image3} alt="Logo" />
         </div>
         <div className="index">
           <img
             className="imgclass"
-            src="/src/images/image.png"
+            src={image}
             alt="Sandwich"
           />
         </div>
