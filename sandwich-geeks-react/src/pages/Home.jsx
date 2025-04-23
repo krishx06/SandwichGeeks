@@ -109,15 +109,15 @@ const Home = () => {
 
       {/* Buttons */}
       <div className="button-container">
-        <a href="/locationcontact">
+      <Link to="/locationcontact">
           <button className="side-btn">| Location</button>
-        </a>
+        </Link>
         <a href="#topproducts">
           <button className="top-products-btn">| Top Products</button>
         </a>
-        <a href="/locationcontact">
+        <Link to="/locationcontact">
           <button className="side-btn">| Contact Us</button>
-        </a>
+        </Link>
       </div>
       
 
