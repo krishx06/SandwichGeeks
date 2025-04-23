@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Niramit:wght@300;400;500;600;700&display=swap');
 @import url("https://fonts.googleapis.com");
 @import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap");
+@import url('https://fonts.gstatic.com');
 
 
 html {
@@ -10,14 +11,14 @@ html {
 
 body {
     background-image: url('MacBook\ Pro\ 14_\ -\ 2.png');
-    font-family: niramit;
+    font-family: "Niramit";
     overflow-x: hidden;
+    margin: 0;
 
 }
 .container {
     height: 4rem; 
     width: 100%;
-    margin: 0;
     display: flex;
     align-items: center; 
     justify-content: center; 
@@ -293,22 +294,14 @@ p {
     transform: translateY(-3px) scale(1.1); /* Slight zoom-in */
 }
 
-.rule1 {
-    margin-top: 19.5vh;
-    height: 3px;
-    width: 100%;
-    border: none;
-    border-radius: 40%;
-    background-color: rgba(0, 0, 0, 0.436);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.71);
-}
+
 .rule2 {
     height: 2px;
     width: 25%;
     border: none;
     background-color: #ff7023;
     display: inline-block;
-    margin-left: 10%;
+    margin-left: 20;
     margin-bottom: 3.5vh;
     margin-right: 59px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
@@ -325,6 +318,9 @@ p {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
 }
 
+.about-us{
+    margin: 200px 200px 0 200px;
+}
 .abt-heading {
     display: inline-block;
     color: black;
@@ -993,6 +989,7 @@ p {
   padding-bottom: 100px;
   border-radius: 20px;
   font-family: 'Segoe UI', sans-serif;
+  margin: 0 8px 0 8px;
   margin-top: 15vh;
   box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.301);
 }
@@ -1018,7 +1015,7 @@ p {
   font-size: 16px;
   opacity: 0.7;
   color: rgb(0, 0, 0);
-  margin-bottom: 5vh;
+  margin-top: -2vh;
   margin-left: 0vw;
   line-height: 2.5vh;
   /* text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.304); */
@@ -1252,6 +1249,7 @@ hr {
     font-family: 'Segoe UI', sans-serif;
     font-size: 14px;
     line-height: 1.6;
+    margin: 0 8px 8px 8px;
     margin-top: -5vh;
     border-radius: 0 0 20px 20px;
   }
