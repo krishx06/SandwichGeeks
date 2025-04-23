@@ -51,8 +51,8 @@ function SandwichGeeksMenu() {
         <div className="menu-row">
           <div className="menu-card">
             <img src="/assets/images/menuuu1.png" alt="Bombay Grill" />
-            <p className="item-name">| Bombay Grill
-                <h4 className="price">$30</h4></p>
+            <p className="item-name">| Bombay Grill</p>
+                <h4 className="price">$30</h4>
    
             <button className="add-btn">Add</button>
           </div>

@@ -73,6 +73,9 @@ const Home = () => {
                 <li>
                 <Link to="/signup">Signup</Link>
                 </li>
+                <li>
+                <Link to="/cart">Cart</Link>
+                </li>
               </ul>
             </nav>
           </div>
