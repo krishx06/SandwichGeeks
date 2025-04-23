@@ -380,19 +380,19 @@ function SandwichGeeksMenu() {
             <h3>More:</h3>
             <ul className="more">
               <li>
-                <a href="/ambience">Ambience</a>
+              <Link to="/ambience">Ambience</Link>
               </li>
               <li>
-                <a href="/menu">Menu</a>
+              <Link to="/menu">Menu</Link>
               </li>
               <li>
                 <a>Newsletter</a>
               </li>
               <li>
-                <a href="/signin">Account</a>
+              <Link to="/signin">Account</Link>
               </li>
               <li>
-                <a href="/locationcontact">Contact Us</a>
+              <Link to="/locationcontact">Contact Us</Link>
               </li>
             </ul>
           </div>
