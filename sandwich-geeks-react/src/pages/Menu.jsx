@@ -52,22 +52,22 @@ function SandwichGeeksMenu() {
           <div className="menu-card">
             <img src="/assets/images/menuuu1.png" alt="Bombay Grill" />
             <p className="item-name">| Bombay Grill
-                <h4 className="price">$30</h4>
-            </p>
+                <h4 className="price">$30</h4></p>
+   
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/menuuu2.png" alt="Delhi Tikki" />
-            <p className="item-name">| Delhi Tikki
+            <p className="item-name">| Delhi Tikki</p>
                 <h4 className="price">$30</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/menuuu3.png" alt="Cheese Melt" />
-            <p className="item-name">| Cheese Melt
+            <p className="item-name">| Cheese Melt</p>
                 <h4 className="price">$30</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
@@ -76,9 +76,9 @@ function SandwichGeeksMenu() {
               alt="Grilled Crust"
               style={{ boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.491)" }}
             />
-            <p className="item-name">| Grilled Crust
+            <p className="item-name">| Grilled Crust</p>
                 <h4 className="price">$30</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
         </div>
@@ -87,23 +87,23 @@ function SandwichGeeksMenu() {
         <div className="menu-row">
           <div className="menu-card">
             <img src="/assets/images/menuuu4.png" alt="Chilli Cheese" />
-            <p className="item-name">| Chilli Cheese
+            <p className="item-name">| Chilli Cheese</p>
                 <h4 className="price">$45</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/menuuu5.png" alt="Paneer Achari" />
-            <p className="item-name">| Paneer Achari
+            <p className="item-name">| Paneer Achari</p>
                 <h4 className="price">$45</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/menuuu6.png" alt="Crunchy Mexican" />
-            <p className="item-name">| Crunchy Mexican
+            <p className="item-name">| Crunchy Mexican</p>
                 <h4 className="price">$45</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
@@ -112,9 +112,9 @@ function SandwichGeeksMenu() {
               alt="Cheesy American"
               style={{ boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.491)" }}
             />
-            <p className="item-name">| Crunchy American
+            <p className="item-name">| Crunchy American</p>
                 <h4 className="price">$45</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
         </div>
@@ -123,30 +123,30 @@ function SandwichGeeksMenu() {
         <div className="menu-row">
           <div className="menu-card" style={{height: "260px"}}>
             <img src="/assets/images/vegsand1.JPG" alt="Aloo Patty Sandwich" />
-            <p className="item-name">| Aloo Patty Sandwich
+            <p className="item-name">| Aloo Patty Sandwich</p>
                 <h4 className="price">$45</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card" style={{height: "260px"}}>
             <img src="/assets/images/vegsand2.JPG" alt="Veg Shammi Sandwich" />
-            <p className="item-name">| Veg Shammi Sandwich
+            <p className="item-name">| Veg Shammi Sandwich</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card" style={{height: "260px"}}>
             <img src="/assets/images/vegsand3.JPG" alt="Paneer Tikka Sandwich" />
-            <p className="item-name">| Paneer Tikka Sandwich
+            <p className="item-name">| Paneer Tikka Sandwich</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card" style={{height: "260px"}}>
             <img src="/assets/images/vegsand4.JPG" alt="Veggie Delite Sandwich" />
-            <p className="item-name">| Veggie Delite Sandwich
+            <p className="item-name">| Veggie Delite Sandwich</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
         </div>
@@ -155,30 +155,30 @@ function SandwichGeeksMenu() {
         <div className="menu-row">
           <div className="menu-card">
             <img src="/assets/images/craver1.avif" alt="Tandoori Paneer Craver" />
-            <p className="item-name">| Tandoori Paneer Craver
+            <p className="item-name">| Tandoori Paneer Craver</p>
                 <h4 className="price">$45</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/craver2.avif" alt="Classic Veggie Craver" />
-            <p className="item-name">| Classic Veggie Craver
+            <p className="item-name">| Classic Veggie Craver</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/craver3.avif" alt="Soya Roll Craver" />
-            <p className="item-name">| Soya Roll Craver
+            <p className="item-name">| Soya Roll Craver</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/craver4.avif" alt="Aloo Patty Craver" />
-            <p className="item-name">| Aloo Patty Craver
+            <p className="item-name">| Aloo Patty Craver</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
         </div>
@@ -190,16 +190,16 @@ function SandwichGeeksMenu() {
               src="/assets/images/wrap1.JPG"
               alt="Paneer Tikka Signature Wrap"
             />
-            <p className="item-name">| Paneer Tikka Signature Wrap
+            <p className="item-name">| Paneer Tikka Signature Wrap</p>
                 <h4 className="price">$45</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/wrap2.JPG" alt="Corn & Peas Signature Wrap" />
-            <p className="item-name">| Corn & Peas Signature Wrap
+            <p className="item-name">| Corn & Peas Signature Wrap</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
@@ -207,16 +207,16 @@ function SandwichGeeksMenu() {
               src="/assets/images/wrap3.JPG"
               alt="Veggie Delite Signature Wrap"
             />
-            <p className="item-name">| Veggie Delite Signature Wrap
+            <p className="item-name">| Veggie Delite Signature Wrap</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/wrap4.JPG" alt="Veg Shammi Signature Wrap" />
-            <p className="item-name">| Veg Shammi Signature Wrap
+            <p className="item-name">| Veg Shammi Signature Wrap</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
         </div>
@@ -225,30 +225,30 @@ function SandwichGeeksMenu() {
         <div className="menu-row">
           <div className="menu-card">
             <img src="/assets/images/salad1.avif" alt="Paneer Tikka Salad" />
-            <p className="item-name">| Paneer Tikka Salad
+            <p className="item-name">| Paneer Tikka Salad</p>
                 <h4 className="price">$45</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/salad2.avif" alt="Veggie Delite Salad" />
-            <p className="item-name">| Veggie Delite Salad
+            <p className="item-name">| Veggie Delite Salad</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/salad3.avif" alt="Aloo Patty Salad" />
-            <p className="item-name">| Aloo Patty Salad
+            <p className="item-name">| Aloo Patty Salad</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/salad4.avif" alt="Veg Shammi Salad" />
-            <p className="item-name">| Veg Shammi Salad
+            <p className="item-name">| Veg Shammi Salad</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
         </div>
@@ -257,30 +257,30 @@ function SandwichGeeksMenu() {
         <div className="menu-row">
           <div className="menu-card">
             <img src="/assets/images/hb2.png" alt="Cafe Mocha" />
-            <p className="item-name">| Cafe Mocha
+            <p className="item-name">| Cafe Mocha </p>
                 <h4 className="price">$45</h4>
-            </p>
+           
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/hb1.png" alt="Latte" />
-            <p className="item-name">| Latte
+            <p className="item-name">| Latte</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/hb3.png" alt="Hot Chocolate" />
-            <p className="item-name">| Hot Chocolate
+            <p className="item-name">| Hot Chocolate</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/hb4.png" alt="French Vanilla" />
-            <p className="item-name">| French Vanilla
+            <p className="item-name">| French Vanilla</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
         </div>
@@ -289,30 +289,30 @@ function SandwichGeeksMenu() {
         <div className="menu-row">
           <div className="menu-card">
             <img src="/assets/images/cb1.png" alt="Java Chip Frappe" />
-            <p className="item-name">| Java Chip Frappe
+            <p className="item-name">| Java Chip Frappe</p>
                 <h4 className="price">$45</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/cb3.png" alt="Iced Latte" />
-            <p className="item-name">| Iced Latte
+            <p className="item-name">| Iced Latte</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/cb2.png" alt="Caramel Iced Frappe" />
-            <p className="item-name">| Caramel Iced Frappe
+            <p className="item-name">| Caramel Iced Frappe</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
           <div className="menu-card">
             <img src="/assets/images/cb4.png" alt="Iced Americano" />
-            <p className="item-name">| Iced Americano
+            <p className="item-name">| Iced Americano</p>
                 <h4 className="price">$60</h4>
-            </p>
+            
             <button className="add-btn">Add</button>
           </div>
         </div>
