@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/signin.css";
 import { Link } from "react-router-dom";
 
 const SignIn = () => {
+    const [cartItems, setCartItems] = useState({});
+    
     useEffect(() => {
         import('vanilla-tilt').then((VanillaTilt) => {
           VanillaTilt.default.init(document.querySelector(".signin-card"), {
@@ -42,6 +44,11 @@ const SignIn = () => {
                 </li>
                 <li>
                 <Link to="/signup">Signup</Link>
+                </li>
+                <li>
+                  <Link to="/cart">Cart
+                    <sup style={{fontSize: "14px"}}> ({Object.values(cartItems).reduce((a, b) => a + b, 0)}) </sup>
+                  </Link>
                 </li>
               </ul>
             </nav>

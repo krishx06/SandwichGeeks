@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/style.css";
 import VanillaTilt from "vanilla-tilt";
 import { useEffect, useRef } from "react";
@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 const Home = () => {
+  const [cartItems, setCartItems] = useState({});
   const targetRef = useRef(null); 
 
   useEffect(() => {
@@ -74,7 +75,9 @@ const Home = () => {
                 <Link to="/signup">Signup</Link>
                 </li>
                 <li>
-                <Link to="/cart">Cart</Link>
+                  <Link to="/cart">Cart
+                    <sup style={{fontSize: "14px"}}> ({Object.values(cartItems).reduce((a, b) => a + b, 0)}) </sup>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -143,7 +146,7 @@ const Home = () => {
           layers of carefully sourced
           <br /> meats, cheeses, and seasonal produce, each bite delivers a
           burst
-          <br /> of flavor that’s sure to bring a smile.
+          <br /> of flavor that's sure to bring a smile.
         </p>
 
         <p className="abt-para" style={{ paddingTop: "16vh" }}>
@@ -152,13 +155,13 @@ const Home = () => {
             Sandwich Geeks
           </span>{" "}
           is a place
-          <br /> for everyone—whether you’re looking for a quick lunch, a cozy
+          <br /> for everyone—whether you're looking for a quick lunch, a cozy
           family meal,
           <br /> or a new local favorite. Our Geeks take pride in making each
           sandwich with care,
           <br /> drawing from classic recipes and innovative flavor
           combinations. We aim to create an
-          <br /> experience that’s not just about the food but about the warmth
+          <br /> experience that's not just about the food but about the warmth
           and enjoyment
           <br /> that good food can bring.
         </p>
@@ -198,7 +201,7 @@ const Home = () => {
           </span>{" "}
           brings an Indian twist to the classic
           <br />
-          sandwich with a flavorful, tangy filling that’s all about spice and
+          sandwich with a flavorful, tangy filling that's all about spice and
           zest. The real highlight of
           <br />
           the Paneer Achari Sandwich lies in its achari spices, which mimic the
@@ -206,7 +209,7 @@ const Home = () => {
           <br />
           of traditional Indian pickles.
           <br />
-          It’s an ideal choice for those who want a satisfying, protein-rich
+          It's an ideal choice for those who want a satisfying, protein-rich
           sandwich with a true taste of
           <br />
           Indian cuisine, all wrapped up in the fresh, crunchy goodness that{" "}
@@ -258,7 +261,7 @@ const Home = () => {
           chocolate, topped with a swirl of creamy steamed milk and a hint of
           cocoa magic.
           <br />
-          It’s more than just a coffee—it’s a cozy hug in a cup that satisfies
+          It's more than just a coffee—it's a cozy hug in a cup that satisfies
           both coffee lovers and
           <br />
           chocolate enthusiasts alike.
@@ -266,10 +269,10 @@ const Home = () => {
           With the perfect balance of bitterness and sweetness, our Café Mocha
           is the ultimate
           <br />
-          crowd favorite, whether you’re kick-starting your day or winding down
+          crowd favorite, whether you're kick-starting your day or winding down
           with a treat.
           <br />
-          No wonder it’s our best seller—it’s the sip everyone keeps coming back
+          No wonder it's our best seller—it's the sip everyone keeps coming back
           for.
         </p>
         <hr className="rule8" />
@@ -294,7 +297,7 @@ const Home = () => {
           <br />
           combines the punch of espresso with indulgent chocolate chips
           <br />
-          for a textured twist that’s both creamy and satisfying. <br />
+          for a textured twist that's both creamy and satisfying. <br />
           Topped with swirls of whipped cream and drizzled with chocolate sauce,
           it's the
           <br />
@@ -323,42 +326,42 @@ const Home = () => {
       <div className="testimonial-section">
         <div className="feedback-box">
           <p className="feedback-text">
-            “Absolutely love the Paneer Achari! Tangy, spicy, and so fresh.”
+            "Absolutely love the Paneer Achari! Tangy, spicy, and so fresh."
           </p>
           <p className="user-name">– Aarya S.</p>
         </div>
 
         <div className="feedback-box">
           <p className="feedback-text">
-            “Cafe Mocha was heavenly. It’s my new comfort drink!”
+            "Cafe Mocha was heavenly. It's my new comfort drink!"
           </p>
           <p className="user-name">– Raghav M.</p>
         </div>
 
         <div className="feedback-box">
           <p className="feedback-text">
-            “Super chill place and the Java Chip Frappe is unbeatable.”
+            "Super chill place and the Java Chip Frappe is unbeatable."
           </p>
           <p className="user-name">– Neha P.</p>
         </div>
 
         <div className="feedback-box">
           <p className="feedback-text">
-            “The ambience is warm and welcoming. Feels like my second home!”
+            "The ambience is warm and welcoming. Feels like my second home!"
           </p>
           <p className="user-name">– Devansh K.</p>
         </div>
 
         <div className="feedback-box">
           <p className="feedback-text">
-            “I come here every weekend. The Paneer Achari is a must-try!”
+            "I come here every weekend. The Paneer Achari is a must-try!"
           </p>
           <p className="user-name">– Aarav S.</p>
         </div>
 
         <div className="feedback-box">
           <p className="feedback-text">
-            “Affordable, delicious, and served with a smile. Love this place!”
+            "Affordable, delicious, and served with a smile. Love this place!"
           </p>
           <p className="user-name">– Riya K.</p>
         </div>
@@ -410,7 +413,7 @@ const Home = () => {
         <div className="feedback-card-new">
           <form className="feedback-form-new">
             <p className="feedback-desc-new">
-              Tell us what made you smile or what could be tastier – we’re all
+              Tell us what made you smile or what could be tastier – we're all
               ears!
             </p>
             <input type="text" placeholder="➤ Your Name" required />

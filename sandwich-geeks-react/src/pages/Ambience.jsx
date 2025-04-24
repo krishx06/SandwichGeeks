@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles//ambience.css';
 import { Link } from 'react-router-dom';
 
 
 const Ambience = () => {
+  const [cartItems, setCartItems] = useState({});
+  
   return (
         <div
   style={{
@@ -32,6 +34,11 @@ const Ambience = () => {
                 </li>
                 <li>
                 <Link to="/signup">Signup</Link>
+                </li>
+                <li>
+                  <Link to="/cart">Cart
+                    <sup style={{fontSize: "14px"}}> ({Object.values(cartItems).reduce((a, b) => a + b, 0)}) </sup>
+                  </Link>
                 </li>
               </ul>
             </nav>

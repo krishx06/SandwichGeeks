@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/locationcontact.css"; 
 import { Link } from "react-router-dom";
 import { useEffect } from 'react';
 
 const LocationContact = () => {
+    const [cartItems, setCartItems] = useState({});
+    
     useEffect(() => {
 
         VanillaTilt.init(document.querySelector('.location-contact-container'), {
@@ -48,6 +50,11 @@ const LocationContact = () => {
                 </li>
                 <li>
                 <Link to="/signup">Signup</Link>
+                </li>
+                <li>
+                  <Link to="/cart">Cart
+                    <sup style={{fontSize: "14px"}}> ({Object.values(cartItems).reduce((a, b) => a + b, 0)}) </sup>
+                  </Link>
                 </li>
               </ul>
             </nav>
