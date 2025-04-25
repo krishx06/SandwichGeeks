@@ -1,14 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "../styles/style.css";
 import VanillaTilt from "vanilla-tilt";
-import { useEffect, useRef } from "react";
 import { Link } from 'react-router-dom';
 
-
-
-const Home = () => {
-  const [cartItems, setCartItems] = useState({});
-  const targetRef = useRef(null); 
+const Home = ({ cartItems }) => {
+  const targetRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,12 +18,13 @@ const Home = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); 
+    handleScroll();
 
     return () => {
-      window.removeEventListener("scroll", handleScroll); 
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   useEffect(() => {
     VanillaTilt.init(document.querySelector(".testimonial-section"), {
       max: 3,
@@ -46,33 +43,32 @@ const Home = () => {
 
   return (
     <div
-  style={{
-    backgroundImage: `url("/assets/images/BackgroundImg.png")`,
-    fontFamily: "Niramit",
-    overflowX: "hidden",
-    margin: "0"
-  }}
->
-
+      style={{
+        backgroundImage: `url("/assets/images/BackgroundImg.png")`,
+        fontFamily: "Niramit",
+        overflowX: "hidden",
+        margin: "0"
+      }}
+    >
       <header>
         <div className="container" id="homepage">
           <div className="glass-card">
             <nav>
               <ul>
                 <li>
-                <Link to="/">Home</Link>
+                  <Link to="/">Home</Link>
+                </li>
+                {/* <li>
+                  <a href="#aboutus">About Us</a>
+                </li> */}
+                <li>
+                  <Link to="/menu">Menu</Link>
                 </li>
                 <li>
-                <a href="#aboutus">About Us</a>
+                  <Link to="/ambience">Ambience</Link>
                 </li>
                 <li>
-                <Link to="/menu">Menu</Link>
-                </li>
-                <li>
-                <Link to="/ambience">Ambience</Link>
-                </li>
-                <li>
-                <Link to="/signup">Signup</Link>
+                  <Link to="/signup">Signup</Link>
                 </li>
                 <li>
                   <Link to="/cart">Cart

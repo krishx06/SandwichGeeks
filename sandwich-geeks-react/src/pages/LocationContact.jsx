@@ -1,55 +1,64 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "../styles/locationcontact.css"; 
 import { Link } from "react-router-dom";
-import { useEffect } from 'react';
 
-const LocationContact = () => {
-    const [cartItems, setCartItems] = useState({});
+const LocationContact = ({ cartItems }) => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    let tiltInstance = null;
     
-    useEffect(() => {
+    const initTilt = async () => {
+      try {
+        const VanillaTilt = (await import('vanilla-tilt')).default;
+        if (containerRef.current) {
+          tiltInstance = VanillaTilt.init(containerRef.current, {
+            max: 6,
+            speed: 1000,
+            glare: true,
+            'max-glare': 0.2,
+          });
+        }
+      } catch (error) {
+        console.error('Failed to initialize VanillaTilt:', error);
+      }
+    };
 
-        VanillaTilt.init(document.querySelector('.location-contact-container'), {
-          max: 6,
-          speed: 1000,
-          glare: true,
-          'max-glare': 0.2,
-        });
+    initTilt();
 
-        return () => {
-          const tiltElement = document.querySelector('.location-contact-container');
-          if (tiltElement) {
-            tiltElement.vanillaTilt.destroy();
-          }
-        };
-      }, []);
+    return () => {
+      if (tiltInstance && tiltInstance.destroy) {
+        tiltInstance.destroy();
+      }
+    };
+  }, []);
+
   return (
     <div
-    style={{
-      backgroundImage: `url("/assets/images/BackgroundImg.png")`,
-      fontFamily: "Niramit",
-      overflowX: "hidden",
-      margin: "0"
-    }}
-  >
+      style={{
+        backgroundImage: `url("/assets/images/BackgroundImg.png")`,
+        fontFamily: "Niramit",
+        overflowX: "hidden",
+        margin: "0"
+      }}
+    >
       <header>
         <div className="container">
           <div className="glass-card">
             <nav>
-            <ul>
+              <ul>
                 <li>
-                <Link to="/">Home</Link>
+                  <Link to="/">Home</Link>
+                </li>
+
+                <li>
+                  <Link to="/menu">Menu</Link>
                 </li>
                 <li>
-                <a href="#about">About Us</a>
+                  <Link to="/ambience">Ambience</Link>
                 </li>
                 <li>
-                <Link to="/menu">Menu</Link>
-                </li>
-                <li>
-                <Link to="/ambience">Ambience</Link>
-                </li>
-                <li>
-                <Link to="/signup">Signup</Link>
+                  <Link to="/signup">Signup</Link>
                 </li>
                 <li>
                   <Link to="/cart">Cart
@@ -63,7 +72,7 @@ const LocationContact = () => {
       </header>
 
       <section className="location-contact-section">
-        <div className="location-contact-container">
+        <div ref={containerRef} className="location-contact-container">
           <div className="location-card">
             <h2>Location:</h2>
             <br /><br /><br /><br />

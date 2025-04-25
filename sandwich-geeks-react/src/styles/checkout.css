@@ -1,0 +1,281 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Niramit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap');
+
+.checkout-section {
+  padding: 120px 20px 40px;
+  min-height: calc(100vh - 200px);
+  font-family: 'Niramit', sans-serif;
+}
+
+.checkout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.229);
+}
+
+.checkout-container h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-shadow: 1px 3px 0px rgba(0, 0, 0, 0.229);
+  font-size: 4.5rem;
+  font-family: 'Sedgwick Ave', cursive;
+}
+
+.checkout-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+}
+
+.order-summary {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.order-summary h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-family: 'Sedgwick Ave', cursive;
+}
+
+.cart-items {
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.item-details h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.item-details p {
+  margin: 5px 0 0;
+  color: #666;
+}
+
+.item-price p {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+}
+
+.total h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.total p {
+  margin: 0;
+  color: #ff7023;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.checkout-form {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.checkout-form h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-family: 'Sedgwick Ave', cursive;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: 'Niramit', sans-serif;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.payment-section {
+  margin-top: 30px;
+}
+
+.payment-options {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+  justify-content: flex-start;
+}
+
+.payment-option {
+  position: relative;
+  cursor: pointer;
+  flex: 1;
+  max-width: 300px;
+}
+
+.payment-option input[type="radio"] {
+  display: none;
+}
+
+.payment-option span {
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #333;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-option span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #0000000b;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.payment-option input[type="radio"] + span::after {
+  content: '';
+  width: 0px;
+  height: 0px;
+  margin-left: 5px;
+  /* border: 0px solid #000000; */
+  border-radius: 50%;
+  margin-right: 12px;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.payment-option input[type="radio"]:checked + span {
+  border-color: #000000;
+  color: black;
+}
+
+.payment-option input[type="radio"]:checked + span::before {
+  opacity: 1;
+}
+
+.payment-option input[type="radio"]:checked + span::after {
+  background: black;
+  border-color: black;
+  box-shadow: inset 0 0 0 3px #ff7023;
+}
+
+.payment-option:hover span {
+  border-color: #0000005a;
+  transform: translateY(-2px);
+}
+
+.payment-option span > span {
+  position: relative;
+  z-index: 1;
+  border: none;
+  padding: 0;
+}
+
+.place-order-btn {
+  display: block;
+  width: calc(100% - 30px);
+  padding: 15px;
+  background-color: #ff7023;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin: 20px 0px 20px 0px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.place-order-btn:hover {
+  background-color: #000000;
+  color: #ff7023;
+}
+
+.payment-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-family: 'Sedgwick Ave', cursive;
+}
+
+@media (max-width: 768px) {
+  .checkout-content {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-options {
+    flex-direction: column;
+  }
+
+  .payment-option {
+    width: 100%;
+  }
+} 

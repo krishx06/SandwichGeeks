@@ -1,49 +1,55 @@
 import React, { useEffect, useState } from "react";
 import "../styles/signin.css";
 import { Link } from "react-router-dom";
+import SigninSuccess from '../components/SigninSuccess';
 
-const SignIn = () => {
-    const [cartItems, setCartItems] = useState({});
-    
-    useEffect(() => {
-        import('vanilla-tilt').then((VanillaTilt) => {
-          VanillaTilt.default.init(document.querySelector(".signin-card"), {
-            max: 6,
-            speed: 1000,
-            glare: true,
-            "max-glare": 0.2,
-          });
-        });
-      }, []);
+const SignIn = ({ cartItems }) => {
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  useEffect(() => {
+    import('vanilla-tilt').then((VanillaTilt) => {
+      VanillaTilt.default.init(document.querySelector(".signin-card"), {
+        max: 6,
+        speed: 1000,
+        glare: true,
+        "max-glare": 0.2,
+      });
+    });
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowSuccess(true);
+  };
 
   return (
     <div
-    style={{
-      backgroundImage: `url("/assets/images/BackgroundImg.png")`,
-      fontFamily: "Niramit",
-      overflowX: "hidden",
-      margin: "0"
-    }}
-  >
+      style={{
+        backgroundImage: `url("/assets/images/BackgroundImg.png")`,
+        fontFamily: "Niramit",
+        overflowX: "hidden",
+        margin: "0"
+      }}
+    >
+      {showSuccess && <SigninSuccess onClose={() => setShowSuccess(false)} />}
+
       <header>
         <div className="container">
           <div className="glass-card">
             <nav>
-            <ul>
+              <ul>
                 <li>
-                <Link to="/">Home</Link>
+                  <Link to="/">Home</Link>
+                </li>
+
+                <li>
+                  <Link to="/menu">Menu</Link>
                 </li>
                 <li>
-                <a href="#about">About Us</a>
+                  <Link to="/ambience">Ambience</Link>
                 </li>
                 <li>
-                <Link to="/menu">Menu</Link>
-                </li>
-                <li>
-                <Link to="/ambience">Ambience</Link>
-                </li>
-                <li>
-                <Link to="/signup">Signup</Link>
+                  <Link to="/signup">Signup</Link>
                 </li>
                 <li>
                   <Link to="/cart">Cart
@@ -65,7 +71,7 @@ const SignIn = () => {
       </section>
 
       <div className="signin-card">
-        <form className="signin-form">
+        <form className="signin-form" onSubmit={handleSubmit}>
           <label htmlFor="email">Email Address:</label>
           <input type="email" id="email" name="email" placeholder="Enter your email" required />
 
@@ -74,7 +80,7 @@ const SignIn = () => {
 
           <button type="submit">Sign In</button>
         </form>
-<br /><br /><br /><br />
+        <br /><br /><br /><br />
         <div className="signin-prompt">
           <p style={{fontSize: "large"}}>Don't have an account yet? <Link to="/signup">Sign up</Link></p>
         </div>

@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles//ambience.css';
 import { Link } from 'react-router-dom';
 
 
-const Ambience = () => {
-  const [cartItems, setCartItems] = useState({});
-  
+const Ambience = ({ cartItems }) => {
   return (
         <div
   style={{
@@ -23,9 +21,7 @@ const Ambience = () => {
                 <li>
                 <Link to="/">Home</Link>
                 </li>
-                <li>
-                <a href="#about">About Us</a>
-                </li>
+
                 <li>
                 <Link to="/menu">Menu</Link>
                 </li>

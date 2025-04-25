@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/signup.css';
 import { Link } from 'react-router-dom';
+import SignupSuccess from '../components/SignupSuccess';
 
-const Signup = () => {
-  const [cartItems, setCartItems] = useState({});
-  
+const Signup = ({ cartItems }) => {
+  const [showSuccess, setShowSuccess] = useState(false);
+
   useEffect(() => {
     import('vanilla-tilt').then((VanillaTilt) => {
       VanillaTilt.default.init(document.querySelector(".signup-card"), {
@@ -16,34 +17,39 @@ const Signup = () => {
     });
   }, []);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowSuccess(true);
+  };
+
   return (
     <div
-    style={{
-      backgroundImage: `url("/assets/images/BackgroundImg.png")`,
-      fontFamily: "Niramit",
-      overflowX: "hidden",
-      margin: "0"
-    }}
-  >
+      style={{
+        backgroundImage: `url("/assets/images/BackgroundImg.png")`,
+        fontFamily: "Niramit",
+        overflowX: "hidden",
+        margin: "0"
+      }}
+    >
+      {showSuccess && <SignupSuccess onClose={() => setShowSuccess(false)} />}
+
       <header>
         <div className="container">
           <div className="glass-card">
             <nav>
-            <ul>
+              <ul>
                 <li>
-                <Link to="/">Home</Link>
+                  <Link to="/">Home</Link>
+                </li>
+
+                <li>
+                  <Link to="/menu">Menu</Link>
                 </li>
                 <li>
-                <a href="#about">About Us</a>
+                  <Link to="/ambience">Ambience</Link>
                 </li>
                 <li>
-                <Link to="/menu">Menu</Link>
-                </li>
-                <li>
-                <Link to="/ambience">Ambience</Link>
-                </li>
-                <li>
-                <Link to="/signup">Signup</Link>
+                  <Link to="/signup">Signup</Link>
                 </li>
                 <li>
                   <Link to="/cart">Cart
@@ -65,7 +71,7 @@ const Signup = () => {
       </section>
 
       <div className="signup-card">
-        <form className="signup-form">
+        <form className="signup-form" onSubmit={handleSubmit}>
           <label htmlFor="name">Full Name:</label>
           <input type="text" id="name" name="name" placeholder="Enter your name" required />
 
@@ -81,7 +87,7 @@ const Signup = () => {
           <button type="submit">Sign Up</button>
         </form><br />
         <div className="signin-prompt">
-            <br />
+          <br />
           <p style={{fontSize: "large"}}>Already have an account? <Link to="/signin">Sign In</Link></p>
         </div>
       </div>
@@ -124,19 +130,19 @@ const Signup = () => {
             <h3>More:</h3>
             <ul className="more">
               <li>
-              <Link to="/ambience">Ambience</Link>
+                <Link to="/ambience">Ambience</Link>
               </li>
               <li>
-              <Link to="/menu">Menu</Link>
+                <Link to="/menu">Menu</Link>
               </li>
               <li>
                 <a>Newsletter</a>
               </li>
               <li>
-              <Link to="/signin">Account</Link>
+                <Link to="/signin">Account</Link>
               </li>
               <li>
-              <Link to="/locationcontact">Contact Us</Link>
+                <Link to="/locationcontact">Contact Us</Link>
               </li>
             </ul>
           </div>

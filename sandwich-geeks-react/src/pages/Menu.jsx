@@ -1,11 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "../styles/menu.css";
 import { Link } from "react-router-dom";
 import VanillaTilt from "vanilla-tilt";
 
-
-function SandwichGeeksMenu() {
-  const [cartItems, setCartItems] = useState({});
+function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
   const cardRefs = useRef({});
 
   useEffect(() => {
@@ -34,36 +32,7 @@ function SandwichGeeksMenu() {
     };
   }, [cartItems]);
 
-  const handleAddToCart = (itemName) => {
-    setCartItems((prev) => {
-      const currentQty = prev[itemName] || 0;
-      if (currentQty >= 10) return prev; 
-      return {
-        ...prev,
-        [itemName]: currentQty + 1,
-      };
-    });
-  };
-  
-
-  const handleRemoveFromCart = (itemName) => {
-    setCartItems((prev) => {
-      const newCount = (prev[itemName] || 0) - 1;
-      if (newCount <= 0) {
-        const newCart = { ...prev };
-        delete newCart[itemName];
-        return newCart;
-      }
-      return {
-        ...prev,
-        [itemName]: newCount,
-      };
-    });
-  };
-  
- 
-
-    const MenuCard = ({ itemName, price, imageSrc, altText }) => {
+  const MenuCard = ({ itemName, price, imageSrc, altText }) => {
     const quantity = cartItems[itemName] || 0;
 
     return (
@@ -81,14 +50,14 @@ function SandwichGeeksMenu() {
             <>
               <button
                 className="quantity-btn minus"
-                onClick={() => handleRemoveFromCart(itemName)}
+                onClick={() => onRemoveFromCart(itemName)}
               >
                 -
               </button>
               <span className="quantity">{quantity}</span>
               <button
                 className="quantity-btn plus"
-                onClick={() => handleAddToCart(itemName)}
+                onClick={() => onAddToCart(itemName)}
               >
                 +
               </button>
@@ -96,7 +65,7 @@ function SandwichGeeksMenu() {
           ) : (
             <button
               className="add-btn"
-              onClick={() => handleAddToCart(itemName)}
+              onClick={() => onAddToCart(itemName)}
             >
               Add
             </button>
@@ -105,7 +74,6 @@ function SandwichGeeksMenu() {
       </div>
     );
   };
-
 
   return (
     <div
@@ -124,9 +92,7 @@ function SandwichGeeksMenu() {
                 <li>
                   <Link to="/">Home</Link>
                 </li>
-                <li>
-                  <a href="#about">About Us</a>
-                </li>
+
                 <li>
                   <Link to="/menu">Menu</Link>
                 </li>
