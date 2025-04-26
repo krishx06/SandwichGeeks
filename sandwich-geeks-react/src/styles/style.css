@@ -1223,6 +1223,10 @@ hr {
     /* margin-left: -5vw; */
     margin-right: -1.2vw;
   }
+
+  .social-icons-grid li a {
+    color: black;
+  }
   
   .social-btn:hover {
     transform: scale(1.1);

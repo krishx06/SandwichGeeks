@@ -571,32 +571,32 @@ const Home = ({ cartItems }) => {
             <h3>Our Socials:</h3>
             <ul className="social-icons-grid">
               <li>
-                <a href="#" className="social-btn ig">
+                <a className="social-btn ig">
                   <i className="fab fa-instagram"></i>
                 </a>
               </li>
               <li>
-                <a href="#" className="social-btn yt">
+                <a className="social-btn yt">
                   <i className="fab fa-youtube"></i>
                 </a>
               </li>
               <li>
-                <a href="#" className="social-btn tw">
+                <a className="social-btn tw">
                   <i className="fab fa-twitter"></i>
                 </a>
               </li>
               <li>
-                <a href="#" className="social-btn lin">
+                <a className="social-btn lin">
                   <i className="fab fa-linkedin"></i>
                 </a>
               </li>
               <li>
-                <a href="#" className="social-btn fb">
+                <a className="social-btn fb">
                   <i className="fab fa-facebook"></i>
                 </a>
               </li>
               <li>
-                <a href="#" className="social-btn dc">
+                <a className="social-btn dc">
                   <i className="fab fa-discord"></i>
                 </a>
               </li>
