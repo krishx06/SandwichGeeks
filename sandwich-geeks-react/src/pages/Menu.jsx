@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/menu.css";
 import { Link } from "react-router-dom";
 import VanillaTilt from "vanilla-tilt";
@@ -11,13 +11,98 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
   const imgPos = useRef({ x: 0, y: 0 });
   const rafId = useRef(null);
   const [showNewsletterSuccess, setShowNewsletterSuccess] = React.useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  // Menu categories and items
+  const menuCategories = {
+    "all": "All Items",
+    "grills": "MEET THE GRILLS",
+    "crafted": "GEEK CRAFTED",
+    "sandwiches": "Veg Sandwiches",
+    "cravers": "The Cravers",
+    "wraps": "Signature Wraps",
+    "salads": "Veg Salads",
+    "hotBeverages": "Hot Beverages",
+    "coldBeverages": "Cold Beverages"
+  };
+
+  const menuItems = {
+    grills: [
+      { itemName: "Bombay Grill", price: "₹449", imageSrc: "/assets/images/menuuu1.png", altText: "Bombay Grill" },
+      { itemName: "Delhi Tikki", price: "₹399", imageSrc: "/assets/images/menuuu2.png", altText: "Delhi Tikki" },
+      { itemName: "Cheese Melt", price: "₹479", imageSrc: "/assets/images/menuuu3.png", altText: "Cheese Melt" },
+      { itemName: "Grilled Crust", price: "₹429", imageSrc: "/assets/images/grilledcrust.png", altText: "Grilled Crust" }
+    ],
+    crafted: [
+      { itemName: "Chilli Cheese", price: "₹459", imageSrc: "/assets/images/menuuu4.png", altText: "Chilli Cheese" },
+      { itemName: "Paneer Achari", price: "₹479", imageSrc: "/assets/images/menuuu5.png", altText: "Paneer Achari" },
+      { itemName: "Crunchy Mexican", price: "₹439", imageSrc: "/assets/images/menuuu6.png", altText: "Crunchy Mexican" },
+      { itemName: "Crunchy American", price: "₹449", imageSrc: "/assets/images/menuuu7.avif", altText: "Cheesy American" }
+    ],
+    sandwiches: [
+      { itemName: "Aloo Patty Sandwich", price: "₹329", imageSrc: "/assets/images/vegsand1.JPG", altText: "Aloo Patty Sandwich" },
+      { itemName: "Veg Shammi Sandwich", price: "₹349", imageSrc: "/assets/images/vegsand2.JPG", altText: "Veg Shammi Sandwich" },
+      { itemName: "Paneer Tikka Sandwich", price: "₹379", imageSrc: "/assets/images/vegsand3.JPG", altText: "Paneer Tikka Sandwich" },
+      { itemName: "Veggie Delite Sandwich", price: "₹299", imageSrc: "/assets/images/vegsand4.JPG", altText: "Veggie Delite Sandwich" }
+    ],
+    cravers: [
+      { itemName: "Tandoori Paneer Craver", price: "₹429", imageSrc: "/assets/images/craver1.avif", altText: "Tandoori Paneer Craver" },
+      { itemName: "Classic Veggie Craver", price: "₹399", imageSrc: "/assets/images/craver2.avif", altText: "Classic Veggie Craver" },
+      { itemName: "Soya Roll Craver", price: "₹379", imageSrc: "/assets/images/craver3.avif", altText: "Soya Roll Craver" },
+      { itemName: "Aloo Patty Craver", price: "₹349", imageSrc: "/assets/images/craver4.avif", altText: "Aloo Patty Craver" }
+    ],
+    wraps: [
+      { itemName: "Paneer Tikka Signature Wrap", price: "₹429", imageSrc: "/assets/images/wrap1.JPG", altText: "Paneer Tikka Signature Wrap" },
+      { itemName: "Corn & Peas Signature Wrap", price: "₹399", imageSrc: "/assets/images/wrap2.JPG", altText: "Corn & Peas Signature Wrap" },
+      { itemName: "Veggie Delite Signature Wrap", price: "₹379", imageSrc: "/assets/images/wrap3.JPG", altText: "Veggie Delite Signature Wrap" },
+      { itemName: "Veg Shammi Signature Wrap", price: "₹409", imageSrc: "/assets/images/wrap4.JPG", altText: "Veg Shammi Signature Wrap" }
+    ],
+    salads: [
+      { itemName: "Paneer Tikka Salad", price: "₹399", imageSrc: "/assets/images/salad1.avif", altText: "Paneer Tikka Salad" },
+      { itemName: "Veggie Delite Salad", price: "₹399", imageSrc: "/assets/images/salad2.avif", altText: "Veggie Delite Salad" },
+      { itemName: "Aloo Patty Salad", price: "₹399", imageSrc: "/assets/images/salad3.avif", altText: "Aloo Patty Salad" },
+      { itemName: "Veg Shammi Salad", price: "₹399", imageSrc: "/assets/images/salad4.avif", altText: "Veg Shammi Salad" }
+    ],
+    hotBeverages: [
+      { itemName: "Cafe Mocha", price: "₹249", imageSrc: "/assets/images/hb2.png", altText: "Cafe Mocha" },
+      { itemName: "Latte", price: "₹199", imageSrc: "/assets/images/hb1.png", altText: "Latte" },
+      { itemName: "Hot Chocolate", price: "₹249", imageSrc: "/assets/images/hb3.png", altText: "Hot Chocolate" },
+      { itemName: "French Vanilla", price: "₹199", imageSrc: "/assets/images/hb4.png", altText: "French Vanilla" }
+    ],
+    coldBeverages: [
+      { itemName: "Java Chip Frappe", price: "₹299", imageSrc: "/assets/images/cb1.png", altText: "Java Chip Frappe" },
+      { itemName: "Iced Latte", price: "₹249", imageSrc: "/assets/images/cb3.png", altText: "Iced Latte" },
+      { itemName: "Caramel Iced Frappe", price: "₹299", imageSrc: "/assets/images/cb2.png", altText: "Caramel Iced Frappe" },
+      { itemName: "Iced Americano", price: "₹249", imageSrc: "/assets/images/cb4.png", altText: "Iced Americano" }
+    ]
+  };
+
+  // Filter menu items based on search query and active category
+  const filteredItems = () => {
+    let items = [];
+    if (activeCategory === "all") {
+      Object.values(menuItems).forEach(categoryItems => {
+        items = [...items, ...categoryItems];
+      });
+    } else {
+      items = menuItems[activeCategory] || [];
+    }
+
+    if (searchQuery) {
+      return items.filter(item => 
+        item.itemName.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+    return items;
+  };
 
   useEffect(() => {
     Object.values(cardRefs.current).forEach((card) => {
       if (card) {
         VanillaTilt.init(card, {
           max: 5,
-          speed: 300,
+          speed: 800,
           glare: false,
           scale: 1.01,
           perspective: 1000,
@@ -139,7 +224,6 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
                 <li>
                   <Link to="/">Home</Link>
                 </li>
-
                 <li>
                   <Link to="/menu">Menu</Link>
                 </li>
@@ -154,7 +238,6 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
                     <sup style={{fontSize: "14px"}}> ({Object.values(cartItems).reduce((a, b) => a + b, 0)}) </sup>
                   </Link>
                 </li>
-
               </ul>
             </nav>
           </div>
@@ -170,228 +253,41 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
       </section>
 
       <section className="menu-section2">
-        <h2 className="section-title">MEET THE GRILLS</h2>
-        <div className="menu-row">
-          <MenuCard 
-            itemName="Bombay Grill"
-            price="₹449"
-            imageSrc="/assets/images/menuuu1.png"
-            altText="Bombay Grill"
-          />
-          <MenuCard 
-            itemName="Delhi Tikki"
-            price="₹399"
-            imageSrc="/assets/images/menuuu2.png"
-            altText="Delhi Tikki"
-          />
-          <MenuCard 
-            itemName="Cheese Melt"
-            price="₹479"
-            imageSrc="/assets/images/menuuu3.png"
-            altText="Cheese Melt"
-          />
-          <MenuCard 
-            itemName="Grilled Crust"
-            price="₹429"
-            imageSrc="/assets/images/grilledcrust.png"
-            altText="Grilled Crust"
+        {/* Search Bar */}
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search menu items..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
           />
         </div>
 
-        <h2 className="section-title">GEEK CRAFTED</h2>
-        <div className="menu-row">
-          <MenuCard 
-            itemName="Chilli Cheese"
-            price="₹459"
-            imageSrc="/assets/images/menuuu4.png"
-            altText="Chilli Cheese"
-          />
-          <MenuCard 
-            itemName="Paneer Achari"
-            price="₹479"
-            imageSrc="/assets/images/menuuu5.png"
-            altText="Paneer Achari"
-          />
-          <MenuCard 
-            itemName="Crunchy Mexican"
-            price="₹439"
-            imageSrc="/assets/images/menuuu6.png"
-            altText="Crunchy Mexican"
-          />
-          <MenuCard 
-            itemName="Crunchy American"
-            price="₹449"
-            imageSrc="/assets/images/menuuu7.avif"
-            altText="Cheesy American"
-          />
+        {/* Category Filter */}
+        <div className="category-filter">
+          {Object.entries(menuCategories).map(([key, label]) => (
+            <button
+              key={key}
+              className={`category-btn ${activeCategory === key ? 'active' : ''}`}
+              onClick={() => setActiveCategory(key)}
+            >
+              {label}
+            </button>
+          ))}
         </div>
 
-        <h2 className="section-title">Veg Sandwiches</h2>
-        <div className="menu-row">
-          <MenuCard 
-            itemName="Aloo Patty Sandwich"
-            price="₹329"
-            imageSrc="/assets/images/vegsand1.JPG"
-            altText="Aloo Patty Sandwich"
-          />
-          <MenuCard 
-            itemName="Veg Shammi Sandwich"
-            price="₹349"
-            imageSrc="/assets/images/vegsand2.JPG"
-            altText="Veg Shammi Sandwich"
-          />
-          <MenuCard 
-            itemName="Paneer Tikka Sandwich"
-            price="₹379"
-            imageSrc="/assets/images/vegsand3.JPG"
-            altText="Paneer Tikka Sandwich"
-          />
-          <MenuCard 
-            itemName="Veggie Delite Sandwich"
-            price="₹299"
-            imageSrc="/assets/images/vegsand4.JPG"
-            altText="Veggie Delite Sandwich"
-          />
-        </div>
-
-        <h2 className="section-title">The Cravers</h2>
-        <div className="menu-row">
-          <MenuCard 
-            itemName="Tandoori Paneer Craver"
-            price="₹429"
-            imageSrc="/assets/images/craver1.avif"
-            altText="Tandoori Paneer Craver"
-          />
-          <MenuCard 
-            itemName="Classic Veggie Craver"
-            price="₹399"
-            imageSrc="/assets/images/craver2.avif"
-            altText="Classic Veggie Craver"
-          />
-          <MenuCard 
-            itemName="Soya Roll Craver"
-            price="₹379"
-            imageSrc="/assets/images/craver3.avif"
-            altText="Soya Roll Craver"
-          />
-          <MenuCard 
-            itemName="Aloo Patty Craver"
-            price="₹349"
-            imageSrc="/assets/images/craver4.avif"
-            altText="Aloo Patty Craver"
-          />
-        </div>
-
-        <h2 className="section-title">Signature Wraps</h2>
-        <div className="menu-row">
-          <MenuCard 
-            itemName="Paneer Tikka Signature Wrap"
-            price="₹429"
-            imageSrc="/assets/images/wrap1.JPG"
-            altText="Paneer Tikka Signature Wrap"
-          />
-          <MenuCard 
-            itemName="Corn & Peas Signature Wrap"
-            price="₹399"
-            imageSrc="/assets/images/wrap2.JPG"
-            altText="Corn & Peas Signature Wrap"
-          />
-          <MenuCard 
-            itemName="Veggie Delite Signature Wrap"
-            price="₹379"
-            imageSrc="/assets/images/wrap3.JPG"
-            altText="Veggie Delite Signature Wrap"
-          />
-          <MenuCard 
-            itemName="Veg Shammi Signature Wrap"
-            price="₹409"
-            imageSrc="/assets/images/wrap4.JPG"
-            altText="Veg Shammi Signature Wrap"
-          />
-        </div>
-
-        <h2 className="section-title">Veg Salads</h2>
-        <div className="menu-row">
-          <MenuCard 
-            itemName="Paneer Tikka Salad"
-            price="₹399"
-            imageSrc="/assets/images/salad1.avif"
-            altText="Paneer Tikka Salad"
-          />
-          <MenuCard 
-            itemName="Veggie Delite Salad"
-            price="₹399"
-            imageSrc="/assets/images/salad2.avif"
-            altText="Veggie Delite Salad"
-          />
-          <MenuCard 
-            itemName="Aloo Patty Salad"
-            price="₹399"
-            imageSrc="/assets/images/salad3.avif"
-            altText="Aloo Patty Salad"
-          />
-          <MenuCard 
-            itemName="Veg Shammi Salad"
-            price="₹399"
-            imageSrc="/assets/images/salad4.avif"
-            altText="Veg Shammi Salad"
-          />
-        </div>
-
-        <h2 className="section-title">Hot Beverages</h2>
-        <div className="menu-row">
-          <MenuCard 
-            itemName="Cafe Mocha"
-            price="₹249"
-            imageSrc="/assets/images/hb2.png"
-            altText="Cafe Mocha"
-          />
-          <MenuCard 
-            itemName="Latte"
-            price="₹199"
-            imageSrc="/assets/images/hb1.png"
-            altText="Latte"
-          />
-          <MenuCard 
-            itemName="Hot Chocolate"
-            price="₹249"
-            imageSrc="/assets/images/hb3.png"
-            altText="Hot Chocolate"
-          />
-          <MenuCard 
-            itemName="French Vanilla"
-            price="₹199"
-            imageSrc="/assets/images/hb4.png"
-            altText="French Vanilla"
-          />
-        </div>
-
-        <h2 className="section-title">Cold Beverages</h2>
-        <div className="menu-row">
-          <MenuCard 
-            itemName="Java Chip Frappe"
-            price="₹299"
-            imageSrc="/assets/images/cb1.png"
-            altText="Java Chip Frappe"
-          />
-          <MenuCard 
-            itemName="Iced Latte"
-            price="₹249"
-            imageSrc="/assets/images/cb3.png"
-            altText="Iced Latte"
-          />
-          <MenuCard 
-            itemName="Caramel Iced Frappe"
-            price="₹299"
-            imageSrc="/assets/images/cb2.png"
-            altText="Caramel Iced Frappe"
-          />
-          <MenuCard 
-            itemName="Iced Americano"
-            price="₹249"
-            imageSrc="/assets/images/cb4.png"
-            altText="Iced Americano"
-          />
+        {/* Menu Items */}
+        <div className="menu-grid">
+          {filteredItems().map((item) => (
+            <MenuCard
+              key={item.itemName}
+              itemName={item.itemName}
+              price={item.price}
+              imageSrc={item.imageSrc}
+              altText={item.altText}
+            />
+          ))}
         </div>
       </section>
 
