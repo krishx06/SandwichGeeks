@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import '../styles//ambience.css';
 import { Link } from 'react-router-dom';
+import NewsletterSuccess from '../components/NewsletterSuccess';
 
 
 const Ambience = ({ cartItems }) => {
@@ -8,6 +9,7 @@ const Ambience = ({ cartItems }) => {
   const mousePos = useRef({ x: 0, y: 0 });
   const imgPos = useRef({ x: 0, y: 0 });
   const rafId = useRef(null);
+  const [showNewsletterSuccess, setShowNewsletterSuccess] = React.useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -117,10 +119,11 @@ const Ambience = ({ cartItems }) => {
               From crunchy bites to byte-sized updates—our newsletter serves up sizzling offers,<br />
               tasty surprises, and the freshest sandwich stories straight to your inbox!
             </p>
-            <form className="subscribe-form">
+            <form className="subscribe-form" onSubmit={e => { e.preventDefault(); setShowNewsletterSuccess(true); }}>
               <input type="email" placeholder="Enter Your Email" required />
               <button type="submit">Subscribe</button>
             </form>
+            {showNewsletterSuccess && <NewsletterSuccess onClose={() => setShowNewsletterSuccess(false)} />}
           </div>
 
           <hr />

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "../styles/menu.css";
 import { Link } from "react-router-dom";
 import VanillaTilt from "vanilla-tilt";
+import NewsletterSuccess from '../components/NewsletterSuccess';
 
 function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
   const cardRefs = useRef({});
@@ -9,6 +10,7 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
   const mousePos = useRef({ x: 0, y: 0 });
   const imgPos = useRef({ x: 0, y: 0 });
   const rafId = useRef(null);
+  const [showNewsletterSuccess, setShowNewsletterSuccess] = React.useState(false);
 
   useEffect(() => {
     Object.values(cardRefs.current).forEach((card) => {
@@ -128,6 +130,7 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
           mixBlendMode: "multiply"
         }}
       />
+      {showNewsletterSuccess && <NewsletterSuccess onClose={() => setShowNewsletterSuccess(false)} />}
       <header>
         <div className="container">
           <div className="glass-card">
@@ -402,7 +405,7 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
             <br /> tasty surprises, and the freshest sandwich stories straight
             to your inbox!
           </p>
-          <form className="subscribe-form">
+          <form className="subscribe-form" onSubmit={e => { e.preventDefault(); setShowNewsletterSuccess(true); }}>
             <input type="email" placeholder="Enter Your Email" required />
             <button type="submit">Subscribe</button>
           </form>

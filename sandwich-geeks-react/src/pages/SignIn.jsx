@@ -2,9 +2,11 @@ import React, { useEffect, useState, useRef } from "react";
 import "../styles/signin.css";
 import { Link } from "react-router-dom";
 import SigninSuccess from '../components/SigninSuccess';
+import NewsletterSuccess from '../components/NewsletterSuccess';
 
 const SignIn = ({ cartItems }) => {
   const [showSuccess, setShowSuccess] = useState(false);
+  const [showNewsletterSuccess, setShowNewsletterSuccess] = useState(false);
   const cursorImgRef = useRef(null);
   const mousePos = useRef({ x: 0, y: 0 });
   const imgPos = useRef({ x: 0, y: 0 });
@@ -72,6 +74,7 @@ const SignIn = ({ cartItems }) => {
         }}
       />
       {showSuccess && <SigninSuccess onClose={() => setShowSuccess(false)} />}
+      {showNewsletterSuccess && <NewsletterSuccess onClose={() => setShowNewsletterSuccess(false)} />}
 
       <header>
         <div className="container">
@@ -133,7 +136,7 @@ const SignIn = ({ cartItems }) => {
             From crunchy bites to byte-sized updates—our newsletter serves up sizzling offers,
             <br /> tasty surprises, and the freshest sandwich stories straight to your inbox!
           </p>
-          <form className="subscribe-form">
+          <form className="subscribe-form" onSubmit={e => { e.preventDefault(); setShowNewsletterSuccess(true); }}>
             <input type="email" placeholder="Enter Your Email" required />
             <button type="submit">Subscribe</button>
           </form>

@@ -3,12 +3,14 @@ import "../styles/style.css";
 import VanillaTilt from "vanilla-tilt";
 import { Link } from 'react-router-dom';
 import FeedbackSuccess from '../components/FeedbackSuccess';
+import NewsletterSuccess from '../components/NewsletterSuccess';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Home = ({ cartItems }) => {
   const targetRef = useRef(null);
   const [showFeedbackSuccess, setShowFeedbackSuccess] = useState(false);
+  const [showNewsletterSuccess, setShowNewsletterSuccess] = useState(false);
   const cursorImgRef = useRef(null);
   const mousePos = useRef({ x: 0, y: 0 });
   const imgPos = useRef({ x: 0, y: 0 });
@@ -114,6 +116,7 @@ const Home = ({ cartItems }) => {
         }}
       />
       {showFeedbackSuccess && <FeedbackSuccess onClose={() => setShowFeedbackSuccess(false)} />}
+      {showNewsletterSuccess && <NewsletterSuccess onClose={() => setShowNewsletterSuccess(false)} />}
       <header>
         <div className="container" id="homepage">
           <div className="glass-card">
@@ -495,7 +498,7 @@ const Home = ({ cartItems }) => {
             tasty surprises, and the freshest sandwich stories straight to your
             inbox!
           </p>
-          <form className="subscribe-form">
+          <form className="subscribe-form" onSubmit={e => { e.preventDefault(); setShowNewsletterSuccess(true); }}>
             <input type="email" placeholder="Enter Your Email" required />
             <button type="submit">Subscribe</button>
           </form>
