@@ -3,6 +3,7 @@ import "../styles/menu.css";
 import { Link } from "react-router-dom";
 import VanillaTilt from "vanilla-tilt";
 import NewsletterSuccess from '../components/NewsletterSuccess';
+import { HashLink } from 'react-router-hash-link';  
 
 function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
   const cardRefs = useRef({});
@@ -17,8 +18,8 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
   // Menu categories and items
   const menuCategories = {
     "all": "All Items",
-    "grills": "MEET THE GRILLS",
-    "crafted": "GEEK CRAFTED",
+    "grills": "Meet The Grills",
+    "crafted": "Geek Crafted",
     "sandwiches": "Veg Sandwiches",
     "cravers": "The Cravers",
     "wraps": "Signature Wraps",
@@ -121,7 +122,7 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
         }
       });
     };
-  }, [cartItems]);
+  }, [cartItems, searchQuery, activeCategory]);
 
   // Custom trailing image cursor effect
   useEffect(() => {
@@ -331,20 +332,16 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
           <div className="link-group1">
             <h3>Our Brand:</h3>
             <ul className="our-brand">
+            <li><HashLink smooth to="/#aboutus">About Us</HashLink></li>
+            <li><HashLink smooth to="/#topproducts">Top Products</HashLink></li>
               <li>
-                <a href="index.html#aboutus">About Us</a>
+                <a href="#customer-feedbacks">Reviews</a>
               </li>
               <li>
-                <a href="index.html#topproducts">Top Products</a>
+                <a href="#offers">Offers</a>
               </li>
               <li>
-                <a href="index.html#customer-feedbacks">Reviews</a>
-              </li>
-              <li>
-                <a href="index.html#offers">Offers</a>
-              </li>
-              <li>
-              <Link to="/locationcontact">Location</Link>
+                <Link to="/locationcontact">Location</Link>
               </li>
             </ul>
           </div>
@@ -353,19 +350,19 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
             <h3>More:</h3>
             <ul className="more">
               <li>
-              <Link to="/ambience">Ambience</Link>
+                <Link to="/ambience">Ambience</Link>
               </li>
               <li>
-              <Link to="/menu">Menu</Link>
+                <Link to="/menu">Menu</Link>
               </li>
               <li>
                 <a>Newsletter</a>
               </li>
               <li>
-              <Link to="/signin">Account</Link>
+                <Link to="/signin">Account</Link>
               </li>
               <li>
-              <Link to="/locationcontact">Contact Us</Link>
+                <Link to="/locationcontact">Contact Us</Link>
               </li>
             </ul>
           </div>

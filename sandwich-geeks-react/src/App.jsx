@@ -10,6 +10,7 @@ import SignIn from './pages/SignIn.jsx';
 import LocationContact from './pages/LocationContact.jsx';
 import Cart from './pages/Cart.jsx';
 import Checkout from './pages/Checkout.jsx';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   const [cartItems, setCartItems] = useState({});
@@ -44,6 +45,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home cartItems={cartItems} />} />
         <Route path="/menu" element={<Menu cartItems={cartItems} onAddToCart={handleAddToCart} onRemoveFromCart={handleRemoveFromCart} />} />

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/locationcontact.css"; 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import NewsletterSuccess from '../components/NewsletterSuccess';
 
 const LocationContact = ({ cartItems }) => {
@@ -181,8 +182,8 @@ const LocationContact = ({ cartItems }) => {
             <div className="link-group1">
               <h3>Our Brand:</h3>
               <ul className="our-brand">
-                <li><a href="index.html#aboutus">About Us</a></li>
-                <li><a href="index.html#topproducts">Top Products</a></li>
+                <li><HashLink smooth to="/#aboutus">About Us</HashLink></li>
+                <li><HashLink smooth to="/#topproducts">Top Products</HashLink></li>
                 <li><a href="index.html#customer-feedbacks">Reviews</a></li>
                 <li><a href="index.html#offers">Offers</a></li>
                 <li><Link to="/locationcontact">Location</Link></li>

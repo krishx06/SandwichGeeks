@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import '../styles/cart.css';
 import NewsletterSuccess from '../components/NewsletterSuccess';
 
@@ -259,8 +260,8 @@ const Cart = ({ cartItems }) => {
             <div className="link-group1">
               <h3>Our Brand:</h3>
               <ul className="our-brand">
-                <li><a href="/#aboutus">About Us</a></li>
-                <li><a href="/#topproducts">Top Products</a></li>
+                <li><HashLink smooth to="/#aboutus">About Us</HashLink></li>
+                <li><HashLink smooth to="/#topproducts">Top Products</HashLink></li>
                 <li><a href="/#customer-feedbacks">Reviews</a></li>
                 <li><a href="/#offers">Offers</a></li>
                 <li><Link to="/locationcontact">Location</Link></li>

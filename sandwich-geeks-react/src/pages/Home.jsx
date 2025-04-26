@@ -6,6 +6,9 @@ import FeedbackSuccess from '../components/FeedbackSuccess';
 import NewsletterSuccess from '../components/NewsletterSuccess';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { HashLink } from 'react-router-hash-link';
+
+
 
 const Home = ({ cartItems }) => {
   const targetRef = useRef(null);
@@ -529,12 +532,8 @@ const Home = ({ cartItems }) => {
           <div className="link-group1">
             <h3>Our Brand:</h3>
             <ul className="our-brand">
-              <li>
-                <a href="#aboutus">About Us</a>
-              </li>
-              <li>
-                <a href="#topproducts">Top Products</a>
-              </li>
+            <li><HashLink smooth to="/#aboutus">About Us</HashLink></li>
+            <li><HashLink smooth to="/#topproducts">Top Products</HashLink></li>
               <li>
                 <a href="#customer-feedbacks">Reviews</a>
               </li>
