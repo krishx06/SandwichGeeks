@@ -60,7 +60,8 @@ const Checkout = ({ cartItems }) => {
     city: '',
     state: '',
     pincode: '',
-    paymentMethod: 'online'
+    paymentMethod: 'online',
+    onlineMethod: 'gpay',
   });
 
   const handleInputChange = (e) => {
@@ -319,6 +320,51 @@ const Checkout = ({ cartItems }) => {
                       <span>Cash on Delivery</span>
                     </label>
                   </div>
+
+                  {formData.paymentMethod === 'online' && (
+                    <div className="payment-options" style={{ marginTop: '18px', marginBottom: '10px', flexWrap: 'wrap' }}>
+                      <label className="payment-option">
+                        <input
+                          type="radio"
+                          name="onlineMethod"
+                          value="gpay"
+                          checked={formData.onlineMethod === 'gpay'}
+                          onChange={handleInputChange}
+                        />
+                        <span><img src="/assets/images/gpay.png" alt="GPay" style={{ width: 28, height: 28, marginRight: 8 }} /> GPay</span>
+                      </label>
+                      <label className="payment-option">
+                        <input
+                          type="radio"
+                          name="onlineMethod"
+                          value="phonepe"
+                          checked={formData.onlineMethod === 'phonepe'}
+                          onChange={handleInputChange}
+                        />
+                        <span><img src="/assets/images/phonepe.png" alt="PhonePe" style={{ width: 28, height: 28, marginRight: 8 }} /> PhonePe</span>
+                      </label>
+                      <label className="payment-option">
+                        <input
+                          type="radio"
+                          name="onlineMethod"
+                          value="paytm"
+                          checked={formData.onlineMethod === 'paytm'}
+                          onChange={handleInputChange}
+                        />
+                        <span><img src="/assets/images/paytm.png" alt="Paytm" style={{ width: 28, height: 28, marginRight: 8 }} /> Paytm</span>
+                      </label>
+                      <label className="payment-option">
+                        <input
+                          type="radio"
+                          name="onlineMethod"
+                          value="card"
+                          checked={formData.onlineMethod === 'card'}
+                          onChange={handleInputChange}
+                        />
+                        <span><img src="/assets/images/card.png" alt="Card" style={{ width: 28, height: 28, marginRight: 8 }} /> Card</span>
+                      </label>
+                    </div>
+                  )}
                 </div>
 
                 <button type="submit" className="place-order-btn">
