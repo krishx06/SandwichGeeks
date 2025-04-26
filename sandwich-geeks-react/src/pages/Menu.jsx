@@ -5,6 +5,10 @@ import VanillaTilt from "vanilla-tilt";
 
 function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
   const cardRefs = useRef({});
+  const cursorImgRef = useRef(null);
+  const mousePos = useRef({ x: 0, y: 0 });
+  const imgPos = useRef({ x: 0, y: 0 });
+  const rafId = useRef(null);
 
   useEffect(() => {
     Object.values(cardRefs.current).forEach((card) => {
@@ -31,6 +35,27 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
       });
     };
   }, [cartItems]);
+
+  // Custom trailing image cursor effect
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      mousePos.current = { x: e.clientX, y: e.clientY };
+      if (!rafId.current) animate();
+    };
+    const animate = () => {
+      imgPos.current.x += (mousePos.current.x - imgPos.current.x) * 0.18;
+      imgPos.current.y += (mousePos.current.y - imgPos.current.y) * 0.18;
+      if (cursorImgRef.current) {
+        cursorImgRef.current.style.transform = `translate3d(${imgPos.current.x - 1}px, ${imgPos.current.y - 3}px, 0)`;
+      }
+      rafId.current = requestAnimationFrame(animate);
+    };
+    document.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(rafId.current);
+    };
+  }, []);
 
   const MenuCard = ({ itemName, price, imageSrc, altText }) => {
     const quantity = cartItems[itemName] || 0;
@@ -82,8 +107,27 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
         fontFamily: "Niramit",
         overflowX: "hidden",
         margin: "0",
+        cursor: "default",
       }}
     >
+      {/* Trailing cursor image */}
+      <img
+        ref={cursorImgRef}
+        src="/assets/images/icon2.png"
+        alt="Cursor Follower"
+        style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          width: 38,
+          height: 48,
+          pointerEvents: "none",
+          zIndex: 9999,
+          transition: "opacity 0.2s",
+          opacity: 1,
+          mixBlendMode: "multiply"
+        }}
+      />
       <header>
         <div className="container">
           <div className="glass-card">

@@ -1,12 +1,28 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/style.css";
 import VanillaTilt from "vanilla-tilt";
 import { Link } from 'react-router-dom';
+import FeedbackSuccess from '../components/FeedbackSuccess';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = ({ cartItems }) => {
   const targetRef = useRef(null);
+  const [showFeedbackSuccess, setShowFeedbackSuccess] = useState(false);
+  const cursorImgRef = useRef(null);
+  const mousePos = useRef({ x: 0, y: 0 });
+  const imgPos = useRef({ x: 0, y: 0 });
+  const rafId = useRef(null);
 
   useEffect(() => {
+    // Initialize AOS for selective sections
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+      offset: 100
+    });
+
     const handleScroll = () => {
       const rect = targetRef.current.getBoundingClientRect();
       const triggerPoint = window.innerHeight * 0.85;
@@ -41,15 +57,63 @@ const Home = ({ cartItems }) => {
     });
   }, []);
 
+  // Trailing image cursor effect (like menu page)
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      mousePos.current = { x: e.clientX, y: e.clientY };
+      if (!rafId.current) animate();
+    };
+    const animate = () => {
+      imgPos.current.x += (mousePos.current.x - imgPos.current.x) * 0.18;
+      imgPos.current.y += (mousePos.current.y - imgPos.current.y) * 0.18;
+      if (cursorImgRef.current) {
+        cursorImgRef.current.style.transform = `translate3d(${imgPos.current.x - 1}px, ${imgPos.current.y - 3}px, 0)`;
+      }
+      rafId.current = requestAnimationFrame(animate);
+    };
+    document.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(rafId.current);
+    };
+  }, []);
+
+  // Feedback form handler
+  const handleFeedbackSubmit = (e) => {
+    e.preventDefault();
+    setShowFeedbackSuccess(true);
+    e.target.reset(); // Optionally reset the form fields
+  };
+
   return (
     <div
       style={{
         backgroundImage: `url("/assets/images/BackgroundImg.png")`,
         fontFamily: "Niramit",
         overflowX: "hidden",
-        margin: "0"
+        margin: "0",
+        cursor: "default",
       }}
     >
+      {/* Trailing cursor image */}
+      <img
+        ref={cursorImgRef}
+        src="/assets/images/icon2.png"
+        alt="Cursor Follower"
+        style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          width: 38,
+          height: 48,
+          pointerEvents: "none",
+          zIndex: 9999,
+          transition: "opacity 0.2s",
+          opacity: 1,
+          mixBlendMode: "multiply"
+        }}
+      />
+      {showFeedbackSuccess && <FeedbackSuccess onClose={() => setShowFeedbackSuccess(false)} />}
       <header>
         <div className="container" id="homepage">
           <div className="glass-card">
@@ -58,9 +122,6 @@ const Home = ({ cartItems }) => {
                 <li>
                   <Link to="/">Home</Link>
                 </li>
-                {/* <li>
-                  <a href="#aboutus">About Us</a>
-                </li> */}
                 <li>
                   <Link to="/menu">Menu</Link>
                 </li>
@@ -111,7 +172,7 @@ const Home = ({ cartItems }) => {
 
       {/* Buttons */}
       <div className="button-container">
-      <Link to="/locationcontact">
+        <Link to="/locationcontact">
           <button className="side-btn">| Location</button>
         </Link>
         <a href="#topproducts">
@@ -121,16 +182,15 @@ const Home = ({ cartItems }) => {
           <button className="side-btn">| Contact Us</button>
         </Link>
       </div>
-      
 
       {/* About Us */}
       <section className="abt" id="aboutus">
-        <div className="about-us">
+        <div className="about-us" data-aos="fade-up">
           <hr className="rule2" />
-          <h1 className="abt-heading">About Us</h1>
+          <h1 className="abt-heading" data-aos="fade-down">About Us</h1>
           <hr className="rule3" />
         </div>
-        <p className="abt-para">
+        <p className="abt-para" data-aos="fade-right">
           Welcome to{" "}
           <span style={{ fontFamily: "Sedgwick Ave", color: "#ff7023" }}>
             Sandwich Geeks
@@ -145,7 +205,7 @@ const Home = ({ cartItems }) => {
           <br /> of flavor that's sure to bring a smile.
         </p>
 
-        <p className="abt-para" style={{ paddingTop: "16vh" }}>
+        <p className="abt-para" style={{ paddingTop: "16vh" }} data-aos="fade-left">
           Founded with a passion for food and a love for community,{" "}
           <span style={{ fontFamily: "Sedgwick Ave", color: "#ff7023" }}>
             Sandwich Geeks
@@ -175,22 +235,22 @@ const Home = ({ cartItems }) => {
 
       {/* Top Products */}
       <section className="tp-section" id="topproducts">
-        <div className="tp-container">
+        <div className="tp-container" data-aos="fade-up">
           <hr className="rule4" />
-          <h1 className="tp-heading">Top Products</h1>
+          <h1 className="tp-heading" data-aos="fade-down">Top Products</h1>
           <hr className="rule5" />
         </div>
       </section>
 
       {/* Product Cards */}
-      <div className="pa1">
+      <div className="pa1" data-aos="fade-right">
         <img
           className="pa1-img"
           src="/assets/images/image 17.png"
           alt="Paneer Achari"
         />
         <hr className="rule6" />
-        <p className="pa-para1">
+        <p className="pa-para1" data-aos="fade-left">
           The Paneer Achari Sandwich at{" "}
           <span style={{ fontFamily: "Sedgwick Ave", color: "#ff7023" }}>
             Sandwich Geeks
@@ -218,8 +278,8 @@ const Home = ({ cartItems }) => {
       </div>
       <p className="title1">Paneer Achari</p>
 
-      <div className="pa2">
-        <p className="pa-para2">
+      <div className="pa2" data-aos="fade-left">
+        <p className="pa-para2" data-aos="fade-right">
           The Crunchy Mexican Sandwich at{" "}
           <span style={{ fontFamily: "Sedgwick Ave", color: "#ff7023" }}>
             Sandwich Geeks
@@ -246,8 +306,8 @@ const Home = ({ cartItems }) => {
       </div>
       <p className="title2">Crunchy Mexican</p>
 
-      <div className="pa3">
-        <p className="pa-para3">
+      <div className="pa3" data-aos="fade-right">
+        <p className="pa-para3" data-aos="fade-left">
           The Café Mocha at{" "}
           <span style={{ fontFamily: "Sedgwick Ave", color: "#ff7023" }}>
             Sandwich Geeks
@@ -280,8 +340,8 @@ const Home = ({ cartItems }) => {
       </div>
       <p className="title3">Cafe Mocha</p>
 
-      <div className="pa4">
-        <p className="pa-para4">
+      <div className="pa4" data-aos="fade-left">
+        <p className="pa-para4" data-aos="fade-right">
           The Java Chip Frappe at{" "}
           <span style={{ fontFamily: "Sedgwick Ave", color: "#ff7023" }}>
             Sandwich Geeks
@@ -364,7 +424,7 @@ const Home = ({ cartItems }) => {
       </div>
 
       {/* Special Offers */}
-      <div className="offer-section">
+      <div className="offer-section" data-aos="fade-up">
         <section className="special-offers">
           <div className="offers-container" id="offers">
             <hr className="rule12" />
@@ -407,7 +467,7 @@ const Home = ({ cartItems }) => {
           <hr className="rule15" />
         </div>
         <div className="feedback-card-new">
-          <form className="feedback-form-new">
+          <form className="feedback-form-new" onSubmit={handleFeedbackSubmit}>
             <p className="feedback-desc-new">
               Tell us what made you smile or what could be tastier – we're all
               ears!

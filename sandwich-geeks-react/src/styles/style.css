@@ -14,7 +14,7 @@ body {
     font-family: "Niramit";
     overflow-x: hidden;
     margin: 0;
-
+    cursor: default;
 }
 .container {
     height: 4rem; 
@@ -266,7 +266,7 @@ p {
     font-size: 20px;
     border: 1px solid #ff55007f;
     border-radius: 50px;
-    cursor: pointer;
+    cursor: default;
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.318);
     transition: all 0.3s ease-in-out;
 }
@@ -278,7 +278,7 @@ p {
     font-size: 18px;
     border: 1px solid #ff7023;
     border-radius: 50px;
-    cursor: pointer;
+    cursor: default;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
     /* transform: translateY(0px); Moves side buttons slightly lower */
@@ -425,7 +425,7 @@ p {
   .pa1-img:hover {
     /* transform: translateY(-10px) scale(1.03);
     transition: 0.5s; */
-    cursor: pointer;
+    cursor: default;
   }
   
 .title1 {
@@ -478,7 +478,7 @@ p {
 .pa2-img:hover {
     transform: translateY(-10px) scale(1.03);
     transition: 0.5s;
-    cursor: pointer;
+    cursor: default;
 }
 .title2 {
     color: black;
@@ -533,7 +533,7 @@ p {
 .pa3-img:hover {
     transform: translateY(-10px) scale(1.03);
     transition: 0.5s;
-    cursor: pointer;
+    cursor: default;
 }
 .title3 {
     color: black;
@@ -589,7 +589,7 @@ p {
 .pa4-img:hover {
     transform: translateY(-10px) scale(1.03);
     transition: 0.5s;
-    cursor: pointer;
+    cursor: default;
 }
 .title4 {
     color: black;
@@ -707,7 +707,7 @@ p {
     box-shadow: 2px 12px 24px rgba(255, 255, 255, 0.324);
     background-color: #ffffff;
     /* border: 0.5px solid black; */
-    cursor: pointer;
+    cursor: default;
 }
 
 .feedback-text {
@@ -964,7 +964,7 @@ p {
     border: none;
     border-radius: 10px;
     font-family: 'Poppins', sans-serif;
-    cursor: pointer;
+    cursor: default;
     transition: background-color 0.3s ease;
     margin-bottom: 1vh;
   }
@@ -1067,7 +1067,7 @@ p {
   color: rgb(255, 255, 255);
   font-weight: bold;
   font-size: 22px;
-  cursor: pointer;
+  cursor: default;
   font-family: 'Sedgwick Ave';
   transition: all 0.2s ease-in-out;
 }
@@ -1157,7 +1157,7 @@ hr {
     padding-bottom: 2px;
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.304);
     transition: color 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
+    cursor: default;
   }
   
   .link-group1 li a::after,

@@ -6,6 +6,7 @@ body {
     background-image: url('MacBook\ Pro\ 14_\ -\ 2.png');
     font-family: niramit;
     overflow-x: hidden;
+    cursor: url('/assets/images/image 3.png'), pointer;
 }
 
 .container {
