@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/checkout.css';
 import OrderSuccess from '../components/OrderSuccess';
 
-const Checkout = ({ cartItems }) => {
+const Checkout = ({ cartItems, clearCart }) => {
   const [showSuccess, setShowSuccess] = useState(false);
   const checkoutContainerRef = useRef(null);
   const cursorImgRef = useRef(null);
@@ -77,6 +77,9 @@ const Checkout = ({ cartItems }) => {
     // Here you would typically handle the order submission
     console.log('Order submitted:', formData);
     setShowSuccess(true);
+    if (typeof clearCart === 'function') {
+      clearCart();
+    }
   };
 
   const getItemPrice = (itemName) => {

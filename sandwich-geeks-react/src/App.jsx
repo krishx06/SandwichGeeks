@@ -40,6 +40,8 @@ const App = () => {
     });
   };
 
+  const clearCart = () => setCartItems({});
+
   return (
     <Router>
       <Routes>
@@ -50,7 +52,7 @@ const App = () => {
         <Route path="/signin" element={<SignIn cartItems={cartItems} />} />
         <Route path="/locationcontact" element={<LocationContact cartItems={cartItems} />} />
         <Route path="/cart" element={<Cart cartItems={cartItems} />} />
-        <Route path="/checkout" element={<Checkout cartItems={cartItems} />} />
+        <Route path="/checkout" element={<Checkout cartItems={cartItems} clearCart={clearCart} />} />
       </Routes>
     </Router>
   );
