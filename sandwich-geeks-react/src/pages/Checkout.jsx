@@ -76,7 +76,7 @@ const Checkout = ({ cartItems, clearCart }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically handle the order submission
+
     console.log('Order submitted:', formData);
     setShowSuccess(true);
     if (typeof clearCart === 'function') {
@@ -122,7 +122,7 @@ const Checkout = ({ cartItems, clearCart }) => {
     return parseInt(prices[itemName]);
   };
 
-  // Calculate total price
+
   const calculateTotal = () => {
     return parseInt(Object.entries(cartItems).reduce((total, [itemName, quantity]) => {
       return total + (parseInt(getItemPrice(itemName)) * parseInt(quantity));

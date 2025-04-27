@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Niramit:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap');
 
-/* General Styling */
 .newsletter-footer {
     background: linear-gradient(280deg, #ea5600, #ff7919, #f75b00);
     max-width: 100%;
@@ -14,7 +13,6 @@
     box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.301);
   }
   
-  /* Header and Description */
   .newsletter-content {
     text-align: center;
     margin-top: -2vh;
@@ -35,7 +33,6 @@
     margin-bottom: 5vh;
   }
   
-  /* Subscribe Form */
   .subscribe-form {
     margin-top: 6vh;
     text-align: center;
@@ -86,7 +83,6 @@
     box-shadow: 0 0 24px rgba(255, 102, 1, 0.3);
   }
   
-  /* Footer Columns */
   .footer-columns {
     display: flex;
     flex-wrap: wrap;
@@ -97,7 +93,6 @@
     width: 100px;
   }
   
-  /* Link Groups */
   .link-group1, .link-group2, .link-group3 {
     margin-left: 10vw;
   }
@@ -224,7 +219,6 @@
     color: #ff7d12;
   }
   
-  /* Specific Icon Hover Backgrounds */
   .ig:hover,
   .yt:hover,
   .tw:hover,
@@ -234,13 +228,11 @@
     background-color: #000;
   }
   
-  /* Divider */
   hr {
     border: 0.5px solid rgba(0, 0, 0, 0.2);
     margin: 40px 0;
   }
   
-  /* Bottom Bar */
   .footer-bottom-bar {
     background-color: #000;
     color: #ffffff86;

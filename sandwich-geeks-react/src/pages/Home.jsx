@@ -20,7 +20,7 @@ const Home = ({ cartItems }) => {
   const rafId = useRef(null);
 
   useEffect(() => {
-    // Initialize AOS for selective sections
+
     AOS.init({
       duration: 1000,
       once: false,
@@ -62,7 +62,7 @@ const Home = ({ cartItems }) => {
     });
   }, []);
 
-  // Trailing image cursor effect (like menu page)
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       mousePos.current = { x: e.clientX, y: e.clientY };
@@ -83,11 +83,11 @@ const Home = ({ cartItems }) => {
     };
   }, []);
 
-  // Feedback form handler
+
   const handleFeedbackSubmit = (e) => {
     e.preventDefault();
     setShowFeedbackSuccess(true);
-    e.target.reset(); // Optionally reset the form fields
+    e.target.reset(); 
   };
 
   return (
@@ -100,7 +100,7 @@ const Home = ({ cartItems }) => {
         cursor: "default",
       }}
     >
-      {/* Trailing cursor image */}
+
       <img
         ref={cursorImgRef}
         src="/assets/images/icon2.png"
@@ -148,7 +148,7 @@ const Home = ({ cartItems }) => {
         </div>
       </header>
 
-      {/* Hero Section */}
+
       <div className="circle1">
         <div>
           <h1 className="logo">
@@ -176,7 +176,7 @@ const Home = ({ cartItems }) => {
         <div className="circle2"></div>
       </div>
 
-      {/* Buttons */}
+
       <div className="button-container">
         <Link to="/locationcontact">
           <button className="side-btn">| Location</button>
@@ -189,7 +189,7 @@ const Home = ({ cartItems }) => {
         </Link>
       </div>
 
-      {/* About Us */}
+
       <section className="abt" id="aboutus">
         <div className="about-us" data-aos="fade-up">
           <hr className="rule2" />
@@ -229,7 +229,6 @@ const Home = ({ cartItems }) => {
         </p>
       </section>
 
-      {/* Animated Side Image */}
       <div className="sideangle-img">
         <img
           ref={targetRef}
@@ -239,7 +238,6 @@ const Home = ({ cartItems }) => {
         />
       </div>
 
-      {/* Top Products */}
       <section className="tp-section" id="topproducts">
         <div className="tp-container" data-aos="fade-up">
           <hr className="rule4" />
@@ -248,7 +246,6 @@ const Home = ({ cartItems }) => {
         </div>
       </section>
 
-      {/* Product Cards */}
       <div className="pa1" data-aos="fade-right">
         <img
           className="pa1-img"
@@ -374,7 +371,7 @@ const Home = ({ cartItems }) => {
       </div>
       <p className="title4">Java Chip Frappe</p>
 
-      {/* Feedback Section */}
+
       <section className="customer-feedback">
         <div className="feedback-container">
           <hr className="rule10" />
@@ -429,7 +426,6 @@ const Home = ({ cartItems }) => {
         </div>
       </div>
 
-      {/* Special Offers */}
       <div className="offer-section" data-aos="fade-up">
         <section className="special-offers">
           <div className="offers-container" id="offers">
@@ -465,7 +461,6 @@ const Home = ({ cartItems }) => {
         </div>
       </div>
 
-      {/* Feedback Form */}
       <section className="feedback-section-new" id="feedback-form">
         <div className="feedback-container-new">
           <hr className="rule14" />
@@ -490,7 +485,6 @@ const Home = ({ cartItems }) => {
         </div>
       </section>
 
-      {/* Newsletter Footer */}
       <section className="newsletter-footer">
         <div className="newsletter-content" id="newsletter">
           <h2>Subscribe to our Newsletter</h2><br></br>

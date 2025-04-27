@@ -53,7 +53,7 @@ const Cart = ({ cartItems }) => {
     };
   }, []);
 
-  // Calculate total price
+
   const calculateTotal = () => {
     const prices = {
       "Bombay Grill": 449,

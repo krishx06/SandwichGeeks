@@ -15,7 +15,6 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
 
-  // Menu categories and items
   const menuCategories = {
     "all": "All Items",
     "grills": "Meet The Grills",
@@ -79,7 +78,6 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
     ]
   };
 
-  // Filter menu items based on search query and active category
   const filteredItems = () => {
     let items = [];
     if (activeCategory === "all") {
@@ -124,7 +122,6 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
     };
   }, [cartItems, searchQuery, activeCategory]);
 
-  // Custom trailing image cursor effect
   useEffect(() => {
     const handleMouseMove = (e) => {
       mousePos.current = { x: e.clientX, y: e.clientY };
@@ -198,7 +195,6 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
         cursor: "default",
       }}
     >
-      {/* Trailing cursor image */}
       <img
         ref={cursorImgRef}
         src="/assets/images/icon2.png"
@@ -254,7 +250,6 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
       </section>
 
       <section className="menu-section2">
-        {/* Search Bar */}
         <div className="search-container">
           <input
             type="text"
@@ -265,7 +260,6 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
           />
         </div>
 
-        {/* Category Filter */}
         <div className="category-filter">
           {Object.entries(menuCategories).map(([key, label]) => (
             <button
@@ -278,7 +272,6 @@ function SandwichGeeksMenu({ cartItems, onAddToCart, onRemoveFromCart }) {
           ))}
         </div>
 
-        {/* Menu Items */}
         <div className="menu-grid">
           {filteredItems().map((item) => (
             <MenuCard

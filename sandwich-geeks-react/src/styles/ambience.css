@@ -48,10 +48,7 @@ ul li{
     padding: 25px;
     text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.137);
 }
-/* ul li a {
-    text-decoration: none;
-    color: black;
-} */
+
 nav ul li a {
     position: relative;
     color: white;
@@ -89,7 +86,6 @@ a:visited {
 
 .newsletter-footer {
     background: linear-gradient(280deg, #ea5600, #ff7919, #f75b00);
-    /* background: #ff6d1e; */
     max-width: 100%;
     color: rgb(0, 0, 0);
     padding: 60px 40px;
@@ -125,7 +121,6 @@ a:visited {
     margin-top: -2vh;
     margin-left: 0vw;
     line-height: 2.5vh;
-    /* text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.304); */
   }
   
   .subscribe-form {
@@ -144,8 +139,6 @@ a:visited {
       font-size: 16px;
       font-family: 'Niramit';
       background: rgba(255, 255, 255, 0.141);
-      /* background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px); */
       color: rgb(0, 0, 0);
       transition: all 0.3s ease-in-out;
       box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.16);
@@ -212,9 +205,7 @@ a:visited {
   
   .footer-columns {
       display: flex;
-      /* justify-content: space-between; */
       flex-wrap: wrap;
-      /* align-items: flex-start; */
     }
     
     .footer-columns > div {
@@ -241,7 +232,7 @@ a:visited {
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 4px; /* Reduced gap between list items */
+      gap: 4px; 
       
     }
   
@@ -249,7 +240,7 @@ a:visited {
     .link-group2 li {
       margin: 0;
       padding: 0;
-      line-height: 1.4; /* Tighter vertical spacing */
+      line-height: 1.4; 
       font-size: 16px;
       font-family: 'Niramit';
       text-decoration: none;
@@ -297,10 +288,9 @@ a:visited {
   
     .social-icons-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 icons per row */
+      grid-template-columns: repeat(3, 1fr); 
       list-style: none;
       padding: 0;
-      /* margin: 5px 0; */
       justify-items: center;
       margin-right: 20vw;
       margin-left: -0.8vw;
@@ -313,8 +303,8 @@ a:visited {
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1); /* frosted glass effect */
-      backdrop-filter: blur(8px); /* blur background behind it */
+      background: rgba(255, 255, 255, 0.1); 
+      backdrop-filter: blur(8px); 
       -webkit-backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.2);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -329,7 +319,6 @@ a:visited {
     .social-icons-grid li {
       display: flex;
       margin: -2.3vh;
-      /* margin-left: -5vw; */
       margin-right: -1.2vw;
     }
     
@@ -338,7 +327,7 @@ a:visited {
       color: #ff7d12;
     }
     
-    /* Optional: Color hovers */
+
     .ig:hover  { background-color: #000000; }
     .yt:hover  { background-color: #000000; }
     .tw:hover  { background-color: #000000; }
@@ -433,8 +422,8 @@ a:visited {
     
     .ambience-overlay-container {
         position: relative;
-        width: 95%;                 /* was 90% */
-        max-width: 900px;           /* was 700px */
+        width: 95%;                 
+        max-width: 900px;       
         margin: 0 auto;
         border-radius: 30px;
         overflow: hidden;
@@ -446,7 +435,7 @@ a:visited {
     .ambienceimg1 {
         width: 100%;
         height: auto;
-        max-height: 550px;          /* was 420px */
+        max-height: 550px;         
         border-radius: 30px;
         object-fit: cover;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);
@@ -456,20 +445,18 @@ a:visited {
 
     
     
-    /* Orange Tint Layer */
     .ambience-color-tint {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.586); /* orange with transparency */
+        background-color: rgba(0, 0, 0, 0.586); 
         opacity: 0;
         transition: opacity 0.4s ease;
         z-index: 1;
     }
     
-    /* Text Overlay */
     .ambience-overlay-text {
         position: absolute;
         top: 50%;
@@ -488,7 +475,6 @@ a:visited {
         pointer-events: none;
     }
     
-    /* Hover Effects */
     .ambience-overlay-container:hover {
         box-shadow: 0px 3px 28px rgb(255, 102, 0);
     }
