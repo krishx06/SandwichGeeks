@@ -8,6 +8,12 @@
 html {
     scroll-behavior: smooth;
 }
+* {
+  cursor: none;
+}
+*:hover{
+  cursor: none;
+}
 
 body {
     background-image: url('MacBook\ Pro\ 14_\ -\ 2.png');

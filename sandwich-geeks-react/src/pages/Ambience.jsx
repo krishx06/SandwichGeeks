@@ -40,15 +40,17 @@ const Ambience = ({ cartItems }) => {
         alt="Cursor Follower"
         style={{
           position: "fixed",
-          left: 0,
-          top: 0,
-          width: 38,
-          height: 48,
+          left: -17,
+          top: -13,
+          width: 40,
+          height: 40,
           pointerEvents: "none",
           zIndex: 9999,
           transition: "opacity 0.2s",
           opacity: 1,
-          mixBlendMode: "multiply"
+          mixBlendMode: "multiply",
+          boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.5)",
+          borderRadius: "50%",
         }}
       />
       <div
