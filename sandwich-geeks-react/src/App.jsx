@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-
+import { Analytics } from "@vercel/analytics/react"
 import Home from './pages/Home.jsx';
 import Menu from './pages/Menu.jsx';
 import Ambience from './pages/Ambience.jsx';
@@ -55,6 +55,7 @@ const App = () => {
         <Route path="/locationcontact" element={<LocationContact cartItems={cartItems} />} />
         <Route path="/cart" element={<Cart cartItems={cartItems} />} />
         <Route path="/checkout" element={<Checkout cartItems={cartItems} clearCart={clearCart} />} />
+        <Route path="/analytics" element={<Analytics />} />
       </Routes>
     </Router>
   );
