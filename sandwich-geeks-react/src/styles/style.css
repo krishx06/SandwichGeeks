@@ -9,6 +9,10 @@ html {
     scroll-behavior: smooth;
 }
 
+*{
+cursor: none
+}
+
 body {
     background-image: url('MacBook\ Pro\ 14_\ -\ 2.png');
     font-family: "Niramit";
