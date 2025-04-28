@@ -67,15 +67,15 @@ const Signup = ({ cartItems }) => {
           position: "fixed",
           left: -17,
           top: -13,
-          width: 40,
-          height: 40,
+          width: 50,
+          height: 60,
           pointerEvents: "none",
           zIndex: 9999,
           transition: "opacity 0.2s",
           opacity: 1,
           mixBlendMode: "multiply",
-          boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.5)",
-          borderRadius: "50%",
+          // boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.5)",
+          // borderRadius: "50%",
         }}
       />
       {showSuccess && <SignupSuccess onClose={() => setShowSuccess(false)} />}
